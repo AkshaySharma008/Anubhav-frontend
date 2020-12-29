@@ -2,7 +2,7 @@ import Article from "./pages/Article";
 import CompanyWiseArticleList from "./pages/CompanyWiseArticleList";
 import HomePage from "./pages/HomePage";
 import RequestArticle from "./pages/RequestArticle";
-import SubmitArticle from "./pages/SubmitArticle";
+import WriteArticle from "./pages/WriteArticle";
 
 export const mainRoute = [
     {
@@ -21,9 +21,9 @@ export const mainRoute = [
         component: Article
     },
     {
-        path: "/submit",
+        path: "/write",
         exact: true,
-        component: SubmitArticle
+        component: WriteArticle
     },
     {
         path: "/request",
