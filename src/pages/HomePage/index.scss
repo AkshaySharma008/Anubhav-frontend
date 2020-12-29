@@ -1,0 +1,26 @@
+.home-page-container {
+    a:hover {
+        text-decoration: none;
+    }
+
+    .company-list {
+        .list-box {
+
+            width: 300px;
+            height: 40px;
+            background: #FFFFFF;
+            border-radius: 11px;
+            font-size: 16px;
+            border: 0px;
+            margin: 4px auto;
+            font-weight: 400;
+
+            &:hover {
+                z-index: 1;
+                background-color: #f8f9fa;
+            }
+        }
+    }
+
+
+}
