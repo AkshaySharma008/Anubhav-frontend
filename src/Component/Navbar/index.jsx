@@ -8,7 +8,7 @@ const Navbar = () => {
             <h4 className="p-2 flex-grow-1 bd-highlight">Anubhav : Experience sharing corner</h4>
 
             <Link to='/' className="p-2">Home</Link>
-            <Link to='/submit' className="p-2">Write Article</Link>
+            <Link to='/write' className="p-2">Write Article</Link>
             <Link to='/request' className="p-2">Request Article</Link>
            
         </div>
