@@ -53,7 +53,7 @@ const HomePage = () => {
                                     companyList.map((item, index) => {
                                         return (
                                             <Link key={index} to={`/interview/${item.company}`} className="list-group-item d-flex justify-content-between align-items-center list-box" >
-                                                <img src={item.domainName} alt="logo" class="rounded-circle"></img>{item.company}
+                                                <div><img src={item.domainName} alt="logo" className="companyLogoImg rounded-circle"></img> {item.company}</div>
                                                 <span className="badge badge-secondary badge-pill">{item.count}</span>
                                             </Link>
 
