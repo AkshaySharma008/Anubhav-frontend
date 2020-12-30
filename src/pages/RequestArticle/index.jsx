@@ -1,12 +1,40 @@
-
-import React from 'react';
-
+import axios from 'axios';
+import React, { Component } from 'react'
 import './index.scss';
 
-const RequestArticle = () => {
-   
-    return (
-        <div>
+class RequestArticle extends Component {
+    state = {
+        requestDetail: {
+            name:'',
+            senior:'',
+            company:'',
+            socialLink:'',
+            note:'',
+        },
+        isChange: false
+    }
+
+    handleInputValue = key => e => {
+        const { requestDetail } = this.state;
+        requestDetail[key] = e.target.value;
+        this.setState({ requestDetail })
+        this.setState({ isAnyChange: true })
+    }
+
+    handleSubmitForm = (e) => {
+    
+        e.preventDefault();
+        const { requestDetail } = this.state;
+
+        let fstring = JSON.stringify(requestDetail);
+        alert(fstring)
+        axios.post()
+
+    }
+    render() {
+        const {requestDetail } = this.state
+        return (
+            <>
             <svg className="requestArticleSVG" width="656" height="426" viewBox="0 0 656 426" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M119.565 24.8771C68.1754 65.7791 120.558 94.5818 84.9704 117.503C49.383 140.424 -78.2443 247.304 70.1759 335.995C218.596 424.686 207.652 453.278 313.59 397.13C419.528 340.982 411.932 330.887 499.126 368.849C586.319 406.81 663.05 352.247 655.391 276.423C648.12 204.455 595.75 208.448 631.127 163.672C666.504 118.896 596.659 -47.4148 474.867 48.3139C353.076 144.043 291.365 115.026 277.994 79.2258C264.622 43.426 200.772 -39.7658 119.565 24.8771Z" fill="url(#paint0_linear)"/>
 <path d="M43.2072 51.5563C78.8938 72.4172 281.417 201.984 189.32 406.862C189.32 406.862 33.1928 354.623 37.8405 54.4044C37.8511 53.8057 38.0256 53.2203 38.3463 52.7073C38.6671 52.1944 39.1228 51.7721 39.6673 51.4831C40.2118 51.1941 40.8259 51.0487 41.4475 51.0615C42.069 51.0744 42.6761 51.2451 43.2072 51.5563Z" fill="#91B3FA"/>
@@ -32,37 +60,43 @@ const RequestArticle = () => {
             <div className="col-md-6 mx-auto">
                 <h4 className= "requestArticleHeader text-center mx-auto my-3">Whose experience you wanna know?</h4>
                 <div className="requestArticleBox col-md-10 mx-auto p-4">
-                    <form>
+                    <form onSubmit={this.handleSubmitForm}>
                         <h4 className="requestArticleHeadLabel m-0">Basic Information</h4>
                         <p className="requestArticleParaLabel">This info is mandatory to fill to request an article</p>
 
                         <div className="row">
                             <div className="form-group col">
-                                <input type="text" className="articleRequestTextBox form-control" placeholder="Your Name"/>
+                                <input type="text"  className="articleRequestTextBox form-control" placeholder="Your Name"
+                                value={requestDetail.name}
+                                required onChange={this.handleInputValue('name')}/>
                             </div>
                             <div className="form-group col">
-                                <input type="text" className="articleRequestTextBox form-control" placeholder="Senior's Name"/>
+                                <input type="text" className="articleRequestTextBox form-control" placeholder="Senior's Name" 
+                                value={requestDetail.senior}
+                                required onChange={this.handleInputValue('senior')}/>
                             </div>
                         </div>
 
                         <div className="form-group">
-                            <input type="text" className="articleRequestTextBox form-control" placeholder="Company/Corporation Name"/>
+                            <input type="text" className="articleRequestTextBox form-control" placeholder="Company/Corporation Name" 
+                             value={requestDetail.company} required onChange={this.handleInputValue('company')}/>
                         </div>
 
                         <h4 className="requestArticleHeadLabel m-0">Social Links</h4>
-                        <p className="requestArticleParaLabel">These links will be helpul for us to contact them. Not mandatory to fill</p>
+                        <p className="requestArticleParaLabel">These links will be helpul for us to contact them (eg : www.linkedin.com/in/alpha-pandey/)</p>
 
                         <div className="form-group">
-                            <input type="text" className="articleRequestTextBox form-control" placeholder="LinkedIn"/>
+                            <input type="text" className="articleRequestTextBox form-control" placeholder="Enter senior's any social media link " pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})" 
+                            value={requestDetail.socialLink}
+                            required onChange={this.handleInputValue('socialLink')}/>
+                        </div>
+                        <h4 className="requestArticleHeadLabel m-0">Personal Note</h4>
+                        <div className="form-group">
+                            <textarea type="text" className="articleRequestTextBox form-control" placeholder="Enter your personal note (optional) " 
+                             value={requestDetail.company} onChange={this.handleInputValue('note')}/>
                         </div>
 
-                        <div className="form-group">
-                            <input type="text" className="articleRequestTextBox form-control" placeholder="Facebook"/>
-                        </div>
-
-                        <div className="form-group">
-                            <input type="text" className="articleRequestTextBox form-control" placeholder="Instagram"/>
-                        </div>
+                       
 
                         <button type="submit" className="requestArticleButton my-2">Send Request <i className="fa fa-paper-plane" aria-hidden="true"></i></button>
                     </form>
@@ -70,8 +104,9 @@ const RequestArticle = () => {
 
             </div>
           
-        </div>
-    )
+        </>
+        )
+    }
 }
 
 export default RequestArticle
