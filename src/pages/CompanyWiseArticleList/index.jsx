@@ -8,7 +8,7 @@ const CompanyWiseArticleList = ({ match }) => {
     const [articleList, setArticleList] = useState([]);
     const [loading, setLoading] = useState(true);
     const loadData = useCallback(() => {
-        const apiUrl_articleList = `/api/v1/article/company/${match.params.companyName}`;
+        const apiUrl_articleList = encodeURI(`/api/v1/article/company/${match.params.companyName}`);
         axios.get(apiUrl_articleList)
             .then((res) => {
                 console.log(res.data, res.data.articles)

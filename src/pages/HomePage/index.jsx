@@ -52,7 +52,8 @@ const HomePage = () => {
                             ) : (
                                     companyList.map((item, index) => {
                                         return (
-                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item d-flex justify-content-between align-items-center list-box" >{item.company}
+                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item d-flex justify-content-between align-items-center list-box" >
+                                                <img src={item.domainName} alt="logo" class="rounded-circle"></img>{item.company}
                                                 <span className="badge badge-secondary badge-pill">{item.count}</span>
                                             </Link>
 
