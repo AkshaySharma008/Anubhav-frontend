@@ -12,10 +12,10 @@ const ArticleCard = ({id,title,description,name,time,tags}) => {
             <div className="d-flex mt-2">
                 {console.log(name)}
                 { (name && (
-                    <span className="name flex-grow-1">by {name}</span>
+                    <span className="name flex-grow-1"> {name}</span>
                 ))}
             
-           
+                <span className="time flex-grow-1"> 23/08/2001</span>
             </div>
 
         </div>

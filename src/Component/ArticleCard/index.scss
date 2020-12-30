@@ -6,7 +6,7 @@
     border-radius: 11px;
     padding: 12px 14px;
     margin: 5px auto;
-   
+    position: relative;
     &:hover {
         z-index: 1;
         background-color: #f8f9fa;
@@ -30,7 +30,17 @@
     }
 
     .name {
+        position: absolute;
+        left:15px;
+        bottom: 10px;
+        font-size: 12px;
+        align-self: flex-end;
+    }
 
+    .time{
+        position: absolute;
+        right:15px;
+        bottom: 10px;
         font-size: 12px;
         align-self: flex-end;
     }
