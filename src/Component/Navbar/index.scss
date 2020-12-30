@@ -32,6 +32,9 @@
         .fa{
             font-size:36px;
             margin-top: -1px;
+            @media (max-width:768px) {
+                display: none;
+            }
         
         }
         

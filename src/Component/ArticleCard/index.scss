@@ -1,12 +1,12 @@
 .article-card {
     
     width: 300px;
-    max-height: 142px;
+    height: 142px;
     background: #FFFFFF;
     border-radius: 11px;
     padding: 12px 14px;
     margin: 5px auto;
-    
+   
     &:hover {
         z-index: 1;
         background-color: #f8f9fa;
