@@ -1,3 +1,4 @@
+import AboutCreators from "./pages/AboutCreators";
 import Article from "./pages/Article";
 import CompanyWiseArticleList from "./pages/CompanyWiseArticleList";
 import HomePage from "./pages/HomePage";
@@ -29,6 +30,11 @@ export const mainRoute = [
         path: "/request",
         exact: true,
         component: RequestArticle
+    },
+    {
+        path: "/made-by",
+        exact: true,
+        component: AboutCreators
     },
 
 ]

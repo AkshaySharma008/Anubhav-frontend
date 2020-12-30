@@ -3,6 +3,23 @@
         text-decoration: none;
     }
 
+    .header-title{
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Kumar One';
+        color:#002C89;
+        word-spacing: 6px;
+    
+    }
+
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.483);
+        width: 100%;
+        right:0;
+        left: 0;
+
+    }
+
     .company-list {
         .title-bar{
             width: 300px;
@@ -33,6 +50,12 @@
                 z-index: 1;
                 background-color: #f8f9fa;
             }
+        }
+    }
+
+    .hide-for-small{
+        @media (max-width:768px) {
+            display: none;
         }
     }
 
