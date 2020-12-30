@@ -4,6 +4,20 @@
     }
 
     .company-list {
+        .title-bar{
+            width: 300px;
+            margin:4px auto;
+            align-content: center;
+            .title{
+            
+            font-size: 16px;
+            font-weight: 600;
+            }
+            a{
+                font-size: 14px;
+                text-decoration: underline;
+            }
+        }
         .list-box {
 
             width: 300px;
