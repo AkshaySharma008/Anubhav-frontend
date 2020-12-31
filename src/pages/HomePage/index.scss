@@ -6,12 +6,26 @@
     }
 
     .company-list{
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: 80vh;
+    }
+    .company-list::-webkit-scrollbar, .recentArticleCards::-webkit-scrollbar{
+        width: 5px;
+    }
+       
+    .company-list::-webkit-scrollbar-thumb,.recentArticleCards::-webkit-scrollbar{
+        background: rgb(153, 153, 153); 
+        border-radius: 10px;
+    }
+      
+    .company-list::-webkit-scrollbar-thumb:hover,.recentArticleCards::-webkit-scrollbar {
+        background: rgb(102, 102, 102); 
     }
 
     .recentArticleCards{
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: 80vh;
     }
 
