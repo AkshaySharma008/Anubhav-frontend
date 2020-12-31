@@ -20,6 +20,7 @@
     .action-buttons {
         display: flex;
         align-content: center;
+        margin-right: 10px;
         & > *{
             margin:0 5px;
         }
@@ -29,7 +30,7 @@
             width: 150px;
             font-size: 16px;
         }
-        .fa{
+        .guidelines-logo{
             color : rgba(0,0,0,0.5);
             font-size:36px;
             margin-top: -1px;
@@ -43,5 +44,6 @@
 
     @media (max-width:768px) {
         .title{ text-align: center;}
+        .action-buttons{ margin-right: 0px;}
     }
 }

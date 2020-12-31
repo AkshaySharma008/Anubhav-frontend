@@ -1,0 +1,9 @@
+.aboutCreator{
+    .creatorImage{
+        width:400px;
+        align-self:center;
+        @media (max-width:768px) {
+            width: 80%;
+        }
+    }
+}

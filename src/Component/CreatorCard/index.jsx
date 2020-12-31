@@ -12,12 +12,12 @@ const CreatorCard = ({id,Name,image,designation,githubLink,linkedInLink,instagra
         <div className="creator-card p-3">
           <img src={image} alt="creatorImage" className="createrCardImg rounded-circle"></img>
           <p className="namePara">{Name}</p>
-          <p className="designationPara">{designation}</p>
+          <p className="designationPara"> </p>
           <div className="d-flex flex-row justify-content-around">
-            <a className="CardlogoDiv" href={githubLink}><img src={githubLogo}></img></a>
-            <a className="CardlogoDiv" href={linkedInLink}><img src={linkedinLogo}></img></a>
-            <a className="CardlogoDiv" href={instagramLink}><img src={instagramLogo}></img></a>
-            <a className="CardlogoDiv" href={facebookLink}><img src={facebookLogo}></img></a>
+            <a className="CardlogoDiv" target="_blank" rel="noreferrer" href={githubLink}><img src={githubLogo} alt="github"></img></a>
+            <a className="CardlogoDiv" target="_blank" rel="noreferrer" href={linkedInLink}><img src={linkedinLogo} alt="linkedin"></img></a>
+            <a className="CardlogoDiv" target="_blank" rel="noreferrer" href={instagramLink}><img src={instagramLogo} alt="insta"></img></a>
+            <a className="CardlogoDiv" target="_blank" rel="noreferrer" href={facebookLink}><img src={facebookLogo} alt="facebook"></img></a>
           </div>
           
           
