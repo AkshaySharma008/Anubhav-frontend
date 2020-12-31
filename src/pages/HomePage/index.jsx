@@ -85,8 +85,6 @@ const HomePage = () => {
                                             </Link>
                                         )
                                     })
-
-
                                 )
                         }
 
