@@ -63,7 +63,7 @@ const HomePage = () => {
                             />
                         </Carousel.Item>
                     </Carousel>
-                    <p className="homepagePara mx-auto mt-4 text-center">Anubhav: Experience Sharing Point (A-ESP) is a platform developed for AITians to read & share encounters of various interviews. Anyone from AIT can submit their experience on A-ESP to guide others on their way to the next interview. All submitted articles are categorized on the basis of the interviewer company. Anubhav also helps you to request your seniors to share their experience here.</p>
+                    <p className="homepagePara mx-auto mt-4 text-center">Anubhav: Experience Sharing Point (A-ESP) is a platform developed for AITians to read & share encounters of various interviews.<span className="hide-for-small">Anyone from AIT can submit their experience on A-ESP to guide others on their way to the next interview. All submitted articles are categorized on the basis of the interviewer company. Anubhav also helps you to request your seniors to share their experience here.</span> </p>
                 </div>
                 <div className="col-md-3 order-md-1 col-12 " >
                     <ul className="list-group company-list">
@@ -79,9 +79,9 @@ const HomePage = () => {
                             ) : (
                                     companyList.map((item, index) => {
                                         return (
-                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item p-1 px-3 d-flex justify-content-between align-items-center list-box my-1" >
-                                                <div><img src={item.domainName} alt="logo" className="companyLogoImg rounded-circle"></img> {item.company}</div>
-                                                <span className="badge badge-secondary badge-pill">{item.count}</span>
+                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item col-12 p-1 px-3 d-flex  justify-content-between align-items-center list-box my-1" >
+                                                <div className="col-11"><img src={item.domainName} alt="logo" className="companyLogoImg rounded-circle"></img>{item.company}</div>
+                                                <span className="col-1 badge badge-secondary badge-pill text-center">{item.count}</span>
                                             </Link>
                                         )
                                     })
