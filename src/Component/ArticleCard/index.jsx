@@ -6,16 +6,16 @@ import './index.scss'
 const ArticleCard = ({id,title,description,name,time,tags}) => {
     return (
         <Link key={id} to={`/article/${id}`}>
-        <div className="article-card">
+        <div className="article-card mb-1">
             <span className="title">{title}</span>
             <span className="summary">{description}</span>
             <div className="d-flex mt-2">
                 {console.log(name)}
                 { (name && (
-                    <span className="name flex-grow-1">by {name}</span>
+                    <span className="name flex-grow-1"> {name}</span>
                 ))}
             
-           
+                <span className="time flex-grow-1"> 23/08/2001</span>
             </div>
 
         </div>

@@ -1,0 +1,52 @@
+[
+  {
+      "id": 1,
+      "name": "Arpit Mishra",
+      "img": "https://scontent.famd1-3.fna.fbcdn.net/v/t1.0-9/123677138_1978780505606179_6514290003966628591_o.jpg?_nc_cat=109&ccb=2&_nc_sid=09cbfe&_nc_ohc=7SPsjRQGVh8AX8aiQ8n&_nc_ht=scontent.famd1-3.fna&oh=54a4393e50a0f1dc6212753908fa2af5&oe=6011BF8E",
+      "designation": "Super Secretary",
+      "githubLink":"https://github.com/arkumish",
+      "instagramLink":"https://www.instagram.com/arkumish/",
+      "facebookLink":"https://www.facebook.com/arkumish",
+      "linkedinLink":"https://www.linkedin.com/in/arpit-kumar-mishra/"
+  },
+  {
+      "id": 2,
+      "name": "Akshay Sharma",
+      "img": "https://i.ibb.co/XJd1wX3/80065270-165855167986313-7011278912353206272-o.jpg",
+      "designation": "Secretary",
+      "githubLink":"https://github.com/AkshaySharma008",
+      "instagramLink":"https://www.instagram.com/me.akshay.sharma/",
+      "facebookLink":"https://www.facebook.com/sharma.akshay.me/",
+      "linkedinLink":"https://www.linkedin.com/in/akshaysharma008/"
+  },
+  {
+      "id": 3,
+      "name": "Satya Prakash",
+      "img": "https://i.imgur.com/m6eMSyV.jpg",
+      "designation": "Tech Head",
+      "githubLink":"https://github.com/satya9500",
+      "instagramLink":"https://www.instagram.com/hey_satya._/",
+      "facebookLink":"https://www.facebook.com/truelit95",
+      "linkedinLink":"https://www.linkedin.com/in/satya-prakash-0a982a130/"
+  },
+  {
+      "id": 4,
+      "name": "Akash Saxena",
+      "img": "https://i.ibb.co/1nk25pt/118046919-1261093334242620-4374261586150049648-o.jpg",
+      "designation": "Joint Secretary",
+      "githubLink":"https://github.com/Akashsaxena2308",
+      "instagramLink":"https://www.instagram.com/akash_saxena_23/",
+      "facebookLink":"https://www.facebook.com/akash.saxena.9465177/",
+      "linkedinLink":"https://www.linkedin.com/in/akash-saxena-372a9318b/"
+  },
+  {
+      "id": 5,
+      "name": "Rishabh Rathore",
+      "img": "https://i.ibb.co/rwQDwvQ/70093190-947181732307968-2361262531307110400-o.jpg",
+      "designation": "Joint Secretary",
+      "githubLink":"https://github.com/xerycks",
+      "instagramLink":"https://www.instagram.com/xerycks/",
+      "facebookLink":"https://www.facebook.com/xerycks",
+      "linkedinLink":"https://www.linkedin.com/in/xerycks/"
+  }
+]

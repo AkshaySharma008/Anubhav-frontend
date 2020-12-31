@@ -1,0 +1,55 @@
+.requestArticleBox {
+  background: rgba(255, 255, 255, 0.48);
+  box-shadow: 0px 4px 4px rgba(241, 241, 241, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 5px;
+}
+
+.requestArticleHeadLabel{
+  color : rgba(88,88,88,1);
+  font-family: 'Kumar One', cursive;
+}
+
+.requestArticleParaLabel{
+  font-size: 0.85rem;
+  color : #949494;
+}
+
+.requestArticleHeader {
+  font-family: 'Kumar One', cursive;
+  color : rgba(0,44,137,1);
+}
+
+.requestArticleSVG{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: -2;
+
+  @media (max-width:768px) {
+    display: none;
+  }
+}
+
+.articleRequestTextBox {
+  border-radius: 5px;
+  border: none;
+  font-size: 0.7rem;
+  color : rgb(141, 141, 141);
+}
+
+.requestArticleButton {
+  background-color : #6496FF;
+  color : white;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  padding : 1%;
+  border: none;
+}
+
+.requestArticleButton i{
+  margin : auto 2px;
+  font-size: 0.7rem;
+  transform: translateY(-1px);
+}

@@ -1,0 +1,47 @@
+.creator-card{
+  height: 15rem;
+  width: 12.5rem;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.15);
+  z-index : 0;
+  box-shadow: none;
+  transition-duration: .6s;
+
+  .createrCardImg {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .designationPara{
+    font-size: 0.75rem;
+    color: rgba(171,191,254,1);
+  }
+
+  .namePara{
+    font-family: "Kumar One";
+    font-size: 1rem;
+    color:rgba(91,91,91,1);
+    margin:0px auto;
+    margin-top: 1rem !important;
+  }
+
+  .CardlogoDiv{
+    border: 1px solid #E2E2E2;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 2% 3%;
+  }
+  .CardlogoDiv:hover{
+    transform: translateY(-2px);
+  }
+}
+
+.creator-card:hover {
+  z-index: 100;
+  transform: scale(1.25);
+  box-shadow: 0px 0px 20px -3px rgba(76, 81, 105, 0.3);
+  transition-duration: .4s;
+}
