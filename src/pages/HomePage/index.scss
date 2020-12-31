@@ -13,14 +13,19 @@
     .company-list::-webkit-scrollbar, .recentArticleCards::-webkit-scrollbar{
         width: 5px;
     }
+
+    .company-list::-webkit-scrollbar-track,.recentArticleCards::-webkit-scrollbar {
+        box-shadow: transparent; 
+        border-radius: 10px;
+      }
        
     .company-list::-webkit-scrollbar-thumb,.recentArticleCards::-webkit-scrollbar{
-        background: rgb(153, 153, 153); 
+        background:  rgb(170,170,170); 
         border-radius: 10px;
     }
       
     .company-list::-webkit-scrollbar-thumb:hover,.recentArticleCards::-webkit-scrollbar {
-        background: rgb(102, 102, 102); 
+        background: transparent; 
     }
 
     .recentArticleCards{
@@ -45,7 +50,7 @@
     }
 
     .homepagePara{
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         margin-top: 8px;
         width: 90%;
     }
@@ -77,9 +82,9 @@
             }
         }
         .list-box {
-            flex:0;
+            flex:none;
             width: 300px;
-            height: 40px !important;
+            height: 40px;
             background: #FFFFFF;
             border-radius: 6px;
             font-size: 16px;

@@ -45,6 +45,7 @@ export class WriteArticle extends Component {
     render() {
         return (
             <div className="container my-3">
+                <div className="col-md-8 mx-auto">
                 <form onSubmit={this.handleSubmitForm}>
                 <div className="form-group">
                         <label htmlFor="exampleFormControlInput1">Title</label>
@@ -67,7 +68,7 @@ export class WriteArticle extends Component {
 
                     <button type="submit" className="btn btn-primary my-2">Submit</button>
                 </form>
-
+                </div>
             </div>
         )
     }
