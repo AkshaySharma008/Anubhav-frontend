@@ -1,7 +1,25 @@
 .home-page-container {
     padding : 0px 2%;
+    overflow: hidden;
     a:hover {
         text-decoration: none;
+    }
+
+    .company-list{
+        overflow: auto;
+        height: 80vh;
+    }
+
+    .recentArticleCards{
+        overflow: auto;
+        height: 80vh;
+    }
+
+    @media (max-width:768px){
+        .company-list{
+            overflow: hidden;
+            height: auto;
+        }
     }
 
     .header-title{
@@ -13,20 +31,20 @@
     }
 
     .homepagePara{
+        font-size: 1.1rem;
         margin-top: 8px;
         width: 90%;
     }
 
-    .carousel-item {
-        padding: 0px 15%;
+    @media (max-width:768px){
+        .homepagePara{
+            font-size: 0.75rem;
+            width: 85%;
+        }
     }
 
-    .carousel-item-caption{
-        text-align: center;
-        font-family: 'Kumar One';
-        color : rgba(64,66,226,.8);
-        font-size: 1.3rem;
-        margin-top: 1rem;
+    .carousel-item {
+        padding: 0px 15%;
     }
 
     .company-list {
@@ -49,10 +67,10 @@
             width: 300px;
             height: 40px;
             background: #FFFFFF;
-            border-radius: 11px;
+            border-radius: 6px;
             font-size: 16px;
             border: 0px;
-            margin: 4px auto;
+            margin: 8px auto;
             font-weight: 400;
 
             &:hover {

@@ -37,8 +37,35 @@ const HomePage = () => {
 
     return (
         <div className="home-page-container container-fluid my-2 d-flex flex-column justify-content-between">
-            <div className="row mb-3">
-                <div className="col-3 col-xm-12">
+            <div className="d-flex flex-md-row flex-column m-0 p-0 mb-3">
+                <div className="col-12 order-md-2 col-md-6  container d-flex flex-column justify-content-around">
+                    {/* <img src={headerImage} alt="Anubhav"/> */}
+                    <Carousel indicators={false}>
+                        <Carousel.Item className="carousel-item" interval={3000}>
+                            <img
+                                className="d-block w-100 mx-auto"
+                                src={headerImageFirst}
+                                alt="First slide"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-item" interval={3000}>
+                            <img
+                                className="d-block w-100 mx-auto"
+                                src={headerImageSecond}
+                                alt="Third slide"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-item" interval={3000}>
+                            <img
+                                className="d-block w-100 mx-auto"
+                                src={headerImageThird}
+                                alt="Third slide"
+                            />
+                        </Carousel.Item>
+                    </Carousel>
+                    <p className="homepagePara mx-auto mt-4 text-center">Anubhav: Experience Sharing Point (A-ESP) is a platform developed for AITians to read & share encounters of various interviews. Anyone from AIT can submit their experience on A-ESP to guide others on their way to the next interview. All submitted articles are categorized on the basis of the interviewer company. Anubhav also helps you to request your seniors to share their experience here.</p>
+                </div>
+                <div className="col-md-3 order-md-1 col-12 ">
                     <ul className="list-group company-list">
                         <div className="title-bar d-flex">
                             <span className="title flex-grow-1 mb-2">Company List</span>
@@ -52,12 +79,10 @@ const HomePage = () => {
                             ) : (
                                     companyList.map((item, index) => {
                                         return (
-                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item d-flex justify-content-between align-items-center list-box my-1" >
+                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item p-1 px-3 d-flex justify-content-between align-items-center list-box my-1" >
                                                 <div><img src={item.domainName} alt="logo" className="companyLogoImg rounded-circle"></img> {item.company}</div>
                                                 <span className="badge badge-secondary badge-pill">{item.count}</span>
                                             </Link>
-
-
                                         )
                                     })
 
@@ -67,49 +92,7 @@ const HomePage = () => {
 
                     </ul>
                 </div>
-                <div className="col-6 container d-flex flex-column justify-content-around">
-                    {/* <img src={headerImage} alt="Anubhav"/> */}
-                    <Carousel indicators={false}>
-                        <Carousel.Item className="carousel-item" interval={3000}>
-                            <img
-                                className="d-block w-100 mx-auto"
-                                src={headerImageFirst}
-                                alt="First slide"
-                            />
-                            <h1 className="carousel-item-caption">Explore various interview experience</h1>
-                            {/* <Carousel.Caption>
-                                <h3><b>Read Experience</b></h3>
-                                <p>Prepare for interview knowledge of previous expriences.</p>
-                            </Carousel.Caption> */}
-                        </Carousel.Item>
-                        <Carousel.Item className="carousel-item" interval={3000}>
-                            <img
-                                className="d-block w-100 mx-auto"
-                                src={headerImageSecond}
-                                alt="Third slide"
-                            />
-                            <h1 className="carousel-item-caption">Request others to share their encounters</h1>
-                            {/* <Carousel.Caption>
-                            <h3><b>Write your Experience</b></h3>
-                                <p>Share your expreience with others, so that they can prepare well for interviews</p>
-                            </Carousel.Caption> */}
-                        </Carousel.Item>
-                        <Carousel.Item className="carousel-item" interval={3000}>
-                            <img
-                                className="d-block w-100 mx-auto"
-                                src={headerImageThird}
-                                alt="Third slide"
-                            />
-                            <h1 className="carousel-item-caption">Share your experience with others</h1>
-                            {/* <Carousel.Caption>
-                                <h3><b>Request Experience</b></h3>
-                                <p>We will also help you to get desired interview expriences of others</p>
-                            </Carousel.Caption> */}
-                        </Carousel.Item>
-                    </Carousel>
-                    <p className="homepagePara mx-auto mt-4 text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur neque, nemo non ipsum laborum sapiente placeat iusto distinctio perspiciatis doloremque a debitis laboriosam aliquam esse architecto tempore at eos impedit ipsa dignissimos obcaecati velit nesciunt! Ut maiores totam repellat illum esse vero deserunt fugiat, quas, facere facilis perspiciatis vel reprehenderit?</p>
-                </div>
-                <div className="col-3">
+                <div className="col-3  order-md-3 hide-for-small recentArticleCards">
                     <ul className="list-group company-list">
                         <div className="title-bar d-flex">
                             <span className="title flex-grow-1 mb-2">Recent Articles</span>
@@ -130,8 +113,6 @@ const HomePage = () => {
                                                 date={item.createdAt}
                                                 tags={item.articleTags}
                                             />
-
-
                                         )
                                     })
 
@@ -143,7 +124,7 @@ const HomePage = () => {
 
                 </div>
             </div>
-            <div className="mt-5 text-center">
+            <div className="text-center">
                 <div className="text-center">Made with ❤️ by <Link to='/made-by'><u>OSS Club</u> </Link> only for AITians</div>
             </div>   
         </div >

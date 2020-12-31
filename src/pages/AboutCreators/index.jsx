@@ -9,7 +9,7 @@ const AboutCreators = () => {
     return (
         <div className="container aboutCreator">
             <div className="d-flex flex-column ">
-            <img className="col-sm-12 col-md-4 my-5 creatorImage" alt="" src={creatorImage}></img>
+            <img className="col-sm-12 mt-5 creatorImage" alt="" src={creatorImage}></img>
                 <div className="d-md-flex flex-md-row flex-wrap justify-content-center" style={{listStyle:"none"}}>
                     {creatorData.map((data,index) => (
                         <div className="m-5" key={index}>

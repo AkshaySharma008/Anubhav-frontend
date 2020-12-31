@@ -6,7 +6,7 @@ import './index.scss'
 const ArticleCard = ({id,title,description,name,time,tags}) => {
     return (
         <Link key={id} to={`/article/${id}`}>
-        <div className="article-card mb-1">
+        <div className="article-card col-12 mb-1">
             <span className="title">{title}</span>
             <span className="summary">{description}</span>
             <div className="d-flex mt-2">
