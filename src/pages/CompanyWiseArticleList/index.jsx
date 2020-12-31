@@ -22,9 +22,12 @@ const CompanyWiseArticleList = ({ match }) => {
     }, [loadData])
 
     return (
-        <div className="container article-list-container">
-            <h4>Interview experiences of {match.params.companyName}</h4>
-            <div className="d-flex flex-wrap article-group">
+        <div className="container mt-4 article-list-container">
+            <div className="list-group-item d-inline-block p-1 px-3 mb-3 d-flex justify-content-between align-items-center list-box my-1" >
+                <div><img alt="logo" className="companyLogoImg rounded-circle"></img> {match.params.companyName}</div>
+                <span className="badge badge-secondary badge-pill">1</span>
+            </div>
+            <div className="col-12 d-flex flex-wrap article-group">
                 {
                     (loading) ? (
                         <Loading />
@@ -32,14 +35,16 @@ const CompanyWiseArticleList = ({ match }) => {
                     ) : (
                             articleList.map((item, index) => {
                                 return (
-                                    <ArticleCard
-                                        id={item._id}
-                                        title={item.title}
-                                        description={item.description}
-                                        name={item.author.name}
-                                        date={item.createdAt}
-                                        tags={item.articleTags}
-                                    />)
+                                    <div className="col-md-4" key="index">
+                                        <ArticleCard
+                                            id={item._id}
+                                            title={item.title}
+                                            description={item.description}
+                                            name={item.author.name}
+                                            date={item.createdAt}
+                                            tags={item.articleTags}
+                                        />
+                                    </div>)
                             })
                         )
                 }

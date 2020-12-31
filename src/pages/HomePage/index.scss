@@ -1,7 +1,25 @@
 .home-page-container {
     padding : 0px 2%;
+    overflow: hidden;
     a:hover {
         text-decoration: none;
+    }
+
+    .company-list{
+        overflow: auto;
+        height: 80vh;
+    }
+
+    .recentArticleCards{
+        overflow: auto;
+        height: 80vh;
+    }
+
+    @media (max-width:768px){
+        .company-list{
+            overflow: hidden;
+            height: auto;
+        }
     }
 
     .header-title{

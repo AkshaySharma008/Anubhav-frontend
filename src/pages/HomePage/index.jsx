@@ -79,12 +79,10 @@ const HomePage = () => {
                             ) : (
                                     companyList.map((item, index) => {
                                         return (
-                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item col-12 p-1 px-3 d-flex justify-content-between align-items-center list-box my-1" >
+                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item p-1 px-3 d-flex justify-content-between align-items-center list-box my-1" >
                                                 <div><img src={item.domainName} alt="logo" className="companyLogoImg rounded-circle"></img> {item.company}</div>
                                                 <span className="badge badge-secondary badge-pill">{item.count}</span>
                                             </Link>
-
-
                                         )
                                     })
 
@@ -115,8 +113,6 @@ const HomePage = () => {
                                                 date={item.createdAt}
                                                 tags={item.articleTags}
                                             />
-
-
                                         )
                                     })
 
@@ -128,7 +124,7 @@ const HomePage = () => {
 
                 </div>
             </div>
-            <div className="mt-5 text-center">
+            <div className="text-center">
                 <div className="text-center">Made with ❤️ by <Link to='/made-by'><u>OSS Club</u> </Link> only for AITians</div>
             </div>   
         </div >
