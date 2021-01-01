@@ -39,7 +39,7 @@ const Article = ({ match }) => {
             ) : (
 
 
-                    <div className="flex-self-center article-body">
+                    <div className="flex-self-center col-md-8 article-body">
                         <h1 className="content-heading mt-4 mb-1 col-12 text-left"> {articleData.title}</h1>
                         <div className="content-author-detail col-12 mb-1 text-left">by {articleData.author.name} &nbsp; |&nbsp; {parseDate(articleData.createdAt)} &nbsp; |&nbsp;
                         <Link to={`/interview/${articleData.companyName}`}>{articleData.companyName}</Link>

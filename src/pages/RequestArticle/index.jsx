@@ -26,7 +26,7 @@ class RequestArticle extends Component {
         e.preventDefault();
         const { requestDetail } = this.state;
 
-        let fstring = JSON.stringify(requestDetail);
+        // let fstring = JSON.stringify(requestDetail);
         //alert(fstring)
         const payload = {
             "requesterName": requestDetail.name,
