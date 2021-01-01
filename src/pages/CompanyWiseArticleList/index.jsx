@@ -21,6 +21,11 @@ const CompanyWiseArticleList = ({ match }) => {
         loadData()
     }, [loadData])
 
+    const replaceHTMLTags=(str)=>{
+        str = str.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+        return str.replace(/<\/?[^>]+(>|$)/g, "")
+    }
+
     return (
         <div className="container mt-4 article-list-container">
              <h4 className="my-4 article-heading">Interview experiences of {match.params.companyName}</h4>
@@ -36,7 +41,7 @@ const CompanyWiseArticleList = ({ match }) => {
                                         <ArticleCard
                                             id={item._id}
                                             title={item.title}
-                                            description={item.description}
+                                            description={replaceHTMLTags(item.description)}
                                             name={item.author.name}
                                             date={item.createdAt}
                                             tags={item.articleTags}
