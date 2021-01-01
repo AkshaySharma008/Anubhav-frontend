@@ -109,6 +109,7 @@ const HomePage = () => {
                                     recentArticles.map((item, index) => {
                                         return (
                                             <ArticleCard
+                                                key={index}
                                                 id={item._id}
                                                 title={item.title}
                                                 description={replaceHTMLTags(item.description)}
