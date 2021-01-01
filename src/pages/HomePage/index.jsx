@@ -35,6 +35,11 @@ const HomePage = () => {
         loadData()
     }, [loadData])
 
+    const replaceHTMLTags=(str)=>{
+        str = str.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+        return str.replace(/<\/?[^>]+(>|$)/g, "")
+    }
+
     return (
         <div className="home-page-container container-fluid my-2 d-flex flex-column justify-content-between">
             <div className="d-flex flex-md-row flex-column m-0 p-0 mb-3">
@@ -63,14 +68,15 @@ const HomePage = () => {
                             />
                         </Carousel.Item>
                     </Carousel>
-                    <p className="homepagePara mx-auto mt-4 text-center">Anubhav: Experience Sharing Point (A-ESP) is a platform developed for AITians to read & share encounters of various interviews. Anyone from AIT can submit their experience on A-ESP to guide others on their way to the next interview. All submitted articles are categorized on the basis of the interviewer company. Anubhav also helps you to request your seniors to share their experience here.</p>
+                    <p className="homepagePara mx-auto mt-4 text-center">Anubhav: Experience Sharing Point (A-ESP) is a platform developed for AITians to read & share encounters of various interviews.<span className="hide-for-small">Anyone from AIT can submit their experience on A-ESP to guide others on their way to the next interview. All submitted articles are categorized on the basis of the interviewer company. Anubhav also helps you to request your seniors to share their experience here.</span> </p>
                 </div>
-                <div className="col-md-3 order-md-1 col-12 ">
-                    <ul className="list-group company-list">
-                        <div className="title-bar d-flex">
-                            <span className="title flex-grow-1 mb-2">Company List</span>
+                <div className="col-md-3 order-md-1 col-12 " >
+                    <div className="title-bar d-flex">
+                        <span className="title flex-grow-1 mb-2">Company List</span>
                             {/* <Link to='/allCompany'>Show all</Link> */}
-                        </div>
+                    </div>
+                    <ul className="list-group company-list">
+                        
                         {
                             (loading) ? (
                                 <div className="list-group-item d-flex justify-content-between align-items-center list-box" ><Loading />
@@ -79,24 +85,23 @@ const HomePage = () => {
                             ) : (
                                     companyList.map((item, index) => {
                                         return (
-                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item p-1 px-3 d-flex justify-content-between align-items-center list-box my-1" >
-                                                <div><img src={item.domainName} alt="logo" className="companyLogoImg rounded-circle"></img> {item.company}</div>
-                                                <span className="badge badge-secondary badge-pill">{item.count}</span>
+                                            <Link key={index} to={`/interview/${item.company}`} className="list-group-item col-12 p-1 px-3 d-flex  justify-content-between align-items-center list-box my-1" >
+                                                <div className="col-11"><img src={item.domainName} alt="logo" className="companyLogoImg rounded-circle"></img>{item.company}</div>
+                                                <span className="col-1 badge badge-secondary badge-pill text-center">{item.count}</span>
                                             </Link>
                                         )
                                     })
-
-
                                 )
                         }
 
                     </ul>
                 </div>
-                <div className="col-3  order-md-3 hide-for-small recentArticleCards">
-                    <ul className="list-group company-list">
-                        <div className="title-bar d-flex">
-                            <span className="title flex-grow-1 mb-2">Recent Articles</span>
-                        </div>
+                <div className="col-3  order-md-3 hide-for-small ">
+                    <div className="title-bar d-flex">
+                        <span className="title flex-grow-1 mb-2">Recent Articles</span>
+                    </div>
+                    <ul className="list-group company-list recentArticleCards">
+                        
                         {
                             (loading) ? (
                                 <div className="list-group-item d-flex justify-content-between align-items-center list-box" ><Loading />
@@ -108,7 +113,7 @@ const HomePage = () => {
                                             <ArticleCard
                                                 id={item._id}
                                                 title={item.title}
-                                                description={item.description}
+                                                description={replaceHTMLTags(item.description)}
                                                 name={item.author.name}
                                                 date={item.createdAt}
                                                 tags={item.articleTags}
@@ -124,9 +129,7 @@ const HomePage = () => {
 
                 </div>
             </div>
-            <div className="text-center">
-                <div className="text-center">Made with ❤️ by <Link to='/made-by'><u>OSS Club</u> </Link> only for AITians</div>
-            </div>   
+            <div className="align-self-center text-center" style={{fontWeight:"700"}}>Made with ❤️ by <Link to='/made-by'><u>OSS Club</u> </Link> only for AITians</div>
         </div >
     )
 }

@@ -6,12 +6,31 @@
     }
 
     .company-list{
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: 80vh;
+    }
+    .company-list::-webkit-scrollbar, .recentArticleCards::-webkit-scrollbar{
+        width: 5px;
+    }
+
+    .company-list::-webkit-scrollbar-track,.recentArticleCards::-webkit-scrollbar {
+        box-shadow: transparent; 
+        border-radius: 10px;
+      }
+       
+    .company-list::-webkit-scrollbar-thumb,.recentArticleCards::-webkit-scrollbar{
+        background:  rgb(170,170,170); 
+        border-radius: 10px;
+    }
+      
+    .company-list::-webkit-scrollbar-thumb:hover,.recentArticleCards::-webkit-scrollbar {
+        background: transparent; 
     }
 
     .recentArticleCards{
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         height: 80vh;
     }
 
@@ -31,7 +50,7 @@
     }
 
     .homepagePara{
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         margin-top: 8px;
         width: 90%;
     }
@@ -63,7 +82,7 @@
             }
         }
         .list-box {
-
+            flex:none;
             width: 300px;
             height: 40px;
             background: #FFFFFF;

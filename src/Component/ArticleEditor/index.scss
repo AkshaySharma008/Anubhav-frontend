@@ -1,12 +1,23 @@
-// .wrapper-class {
-//     padding: 1rem;
-//     border: 1px solid #ccc;
-//   }
-//   .editor-class {
-//     background-color:lightgray;
-//     padding: 1rem;
-//     border: 1px solid #ccc;
-//   }
-//   .toolbar-class {
-//     border: 1px solid #ccc;
-//   }
+.wrapper-class {
+    padding: 0;
+    border-radius: 5px;
+    //border: 1px solid #ccc;
+  }
+  .editor-class {
+    background-color:#f0f4ff !important;
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+  }
+  .toolbar-class {
+    border: 1px solid #ccc;
+  }
+
+  .rdw-editor-toolbar{
+    margin-bottom: 0px !important;
+   }
+ 
+   .rdw-editor-main{
+     min-height: 500px !important;
+   }
+
+
