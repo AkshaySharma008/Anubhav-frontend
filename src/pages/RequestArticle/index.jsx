@@ -51,8 +51,8 @@ class RequestArticle extends Component {
 <path d="M582.932 247.716C582.932 247.716 506.965 257.97 359.901 392.399C359.901 392.399 515.129 264.839 582.932 247.716Z" fill="#DCE5FE"/>
 <defs>
 <linearGradient id="paint0_linear" x1="-0.000163451" y1="213.498" x2="655.921" y2="213.498" gradientUnits="userSpaceOnUse">
-<stop stop-color="#9EB5F9"/>
-<stop offset="1" stop-color="#E9EFFD"/>
+<stop stopColor="#9EB5F9"/>
+<stop offset="1" stopColor="#E9EFFD"/>
 </linearGradient>
 </defs>
 </svg>

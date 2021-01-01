@@ -36,8 +36,9 @@ const CompanyWiseArticleList = ({ match }) => {
                     ) : (
                             articleList.map((item, index) => {
                                 return (
-                                    <div className="col-md-4" key="index">
+                                    <div className="col-md-4" key={index}>
                                         <ArticleCard
+                                            key={index}
                                             id={item._id}
                                             title={item.title}
                                             description={replaceHTMLTags(item.description)}
