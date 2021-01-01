@@ -27,8 +27,23 @@ class RequestArticle extends Component {
         const { requestDetail } = this.state;
 
         let fstring = JSON.stringify(requestDetail);
-        alert(fstring)
-        axios.post()
+        //alert(fstring)
+        const payload = {
+            "requesterName": requestDetail.name,
+            "requesteeName": requestDetail.senior,
+            "requesteeContact": requestDetail.socialLink,
+            "company": requestDetail.company,
+            "note": requestDetail.note
+        }
+        //alert(JSON.stringify(payload))
+        const apiUrl = '/api/v1/request';
+
+        axios.post(apiUrl, payload).then((res) => {
+            alert("Successfully uploaded")
+        }).catch((err) => {
+            alert("Error while uploading")
+            console.log(err);
+        })
 
     }
     render() {
@@ -93,7 +108,7 @@ class RequestArticle extends Component {
                         <h4 className="requestArticleHeadLabel m-0">Personal Note</h4>
                         <div className="form-group">
                             <textarea type="text" className="articleRequestTextBox form-control" placeholder="Enter your personal note (optional) " 
-                             value={requestDetail.company} onChange={this.handleInputValue('note')}/>
+                             value={requestDetail.note} onChange={this.handleInputValue('note')}/>
                         </div>
 
                        

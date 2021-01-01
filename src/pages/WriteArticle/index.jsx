@@ -80,7 +80,9 @@ export class WriteArticle extends Component {
             const apiUrl = '/api/v1/article/';
 
             axios.post(apiUrl, payload).then((res) => {
+                alert("Successfully uploaded")
             }).catch((err) => {
+                alert("Error while uploading")
                 console.log(err);
             })
         }
