@@ -26,6 +26,7 @@ const ArticleEditor = ({handleInputChange}) => {
                 wrapperClassName="wrapper-class"
                 editorClassName="editor-class"
                 toolbarClassName="toolbar-class"
+                placeholder="Write here....."
             />
         </>
     )

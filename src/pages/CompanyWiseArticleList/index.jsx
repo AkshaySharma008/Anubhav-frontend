@@ -15,7 +15,7 @@ const CompanyWiseArticleList = ({ match }) => {
                 setArticleList(res.data.articles)
                 setLoading(false);
             })
-    }, []);
+    }, [match.params.companyName]);
 
     useEffect(() => {
         loadData()

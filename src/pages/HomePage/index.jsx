@@ -35,6 +35,11 @@ const HomePage = () => {
         loadData()
     }, [loadData])
 
+    const replaceHTMLTags=(str)=>{
+        str = str.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+        return str.replace(/<\/?[^>]+(>|$)/g, "")
+    }
+
     return (
         <div className="home-page-container container-fluid my-2 d-flex flex-column justify-content-between">
             <div className="d-flex flex-md-row flex-column m-0 p-0 mb-3">
@@ -108,7 +113,7 @@ const HomePage = () => {
                                             <ArticleCard
                                                 id={item._id}
                                                 title={item.title}
-                                                description={item.description}
+                                                description={replaceHTMLTags(item.description)}
                                                 name={item.author.name}
                                                 date={item.createdAt}
                                                 tags={item.articleTags}
