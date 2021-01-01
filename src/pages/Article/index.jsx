@@ -36,7 +36,7 @@ const Article = ({ match }) => {
         return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
     }
     return (
-        <div className="col-12 d-flex justify-content-around article-content">
+        <div className="col-12 d-flex justify-content-around article-content mt-4">
             { (loading) ? (<Loading />
             ) : (
 
