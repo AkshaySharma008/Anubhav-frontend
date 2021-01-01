@@ -5,27 +5,13 @@
     
     a:hover{text-decoration: none;}
 
-    .list-box {
-
-        background: #FFFFFF;
-        border-radius: 6px;
-        font-size: 1rem;
-        border: 0px;
-        width: 300px;
-
-        &:hover {
-            z-index: 1;
-            background-color: #f8f9fa;
-        }
-
-        img{
-            width:30px;
-        }
+    .article-heading {
+        margin: 0px 30px;
     }
 
     .article-group{
         .article-card {
-            background: #E4EBFE;
+            background: #f0f4ff;
             border: 1px solid #BFD0FF;
             box-sizing: border-box;
             border-radius: 11px;
