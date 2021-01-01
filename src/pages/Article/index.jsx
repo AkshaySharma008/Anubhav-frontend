@@ -15,10 +15,8 @@ const Article = ({ match }) => {
         const apiUrl_article = encodeURI(`/api/v1/article/${match.params.articleId}`);
         axios.get(apiUrl_article)
             .then((res) => {
-                //console.log(res.data, res.data.article[0])
                 setArticleData(res.data.article[0])
                 setLoading(false);
-                //console.log(typeof res.data.article[0].createdAt)
             })
     }, [match.params.articleId]);
 

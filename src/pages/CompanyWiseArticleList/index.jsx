@@ -11,7 +11,6 @@ const CompanyWiseArticleList = ({ match }) => {
         const apiUrl_articleList = encodeURI(`/api/v1/article/company/${match.params.companyName}`);
         axios.get(apiUrl_articleList)
             .then((res) => {
-                console.log(res.data, res.data.articles)
                 setArticleList(res.data.articles)
                 setLoading(false);
             })

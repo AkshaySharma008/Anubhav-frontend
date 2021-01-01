@@ -23,8 +23,6 @@ const HomePage = () => {
             axios.get(apiUrl_allArticle)
         ])
             .then(axios.spread((res1, res2) => {
-
-                console.log(res1.data, res2.data.articles)
                 setCompanyList(res1.data.data);
                 setRecentArticles(res2.data.articles)
                 setLoading(false);

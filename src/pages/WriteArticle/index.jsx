@@ -77,11 +77,9 @@ export class WriteArticle extends Component {
                 }
             }
             //alert(JSON.stringify(payload))
-            //console.log(payload)
             const apiUrl = '/api/v1/article/';
 
             axios.post(apiUrl, payload).then((res) => {
-                console.log(res)
             }).catch((err) => {
                 console.log(err);
             })
