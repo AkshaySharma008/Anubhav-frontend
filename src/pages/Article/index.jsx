@@ -22,7 +22,7 @@ const Article = ({ match }) => {
 
     useEffect(() => {
         loadData()
-    }, [])
+    }, [loadData])
 
     const parseHTMLTags = (str) => {
         str = str.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
