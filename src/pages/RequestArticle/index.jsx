@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react'
+import OverlayModal from '../../Component/OverlayModal';
 import './index.scss';
 
 class RequestArticle extends Component {
@@ -11,7 +12,13 @@ class RequestArticle extends Component {
             socialLink:'',
             note:'',
         },
-        isChange: false
+        isChange: false,
+        showModal : false,
+        modalContent : {
+            heading : '',
+            icon : '',
+            text : '',
+        }
     }
 
     handleInputValue = key => e => {
@@ -24,10 +31,13 @@ class RequestArticle extends Component {
     handleSubmitForm = (e) => {
     
         e.preventDefault();
-        const { requestDetail } = this.state;
-
-        // let fstring = JSON.stringify(requestDetail);
-        //alert(fstring)
+        const { requestDetail,modalContent } = this.state;
+        modalContent['heading'] = "Uploading"
+        modalContent['icon']="fa-upload"
+        modalContent['text']="Have patience....."
+        this.setState({showModal : true},()=>{
+            this.setState({modalContent})
+        })
         const payload = {
             "requesterName": requestDetail.name,
             "requesteeName": requestDetail.senior,
@@ -39,10 +49,19 @@ class RequestArticle extends Component {
         const apiUrl = '/api/v1/request';
 
         axios.post(apiUrl, payload).then((res) => {
-            alert("Successfully uploaded")
+                modalContent['heading'] = "Successfully submitted"
+                modalContent['icon']="fa-smile-o"
+                modalContent['text']="Your request is saved. Now we will try to connect with senior to get his/her experience on Anubhav."
+                this.setState({showModal : true},()=>{
+                    this.setState({modalContent})
+                })
         }).catch((err) => {
-            alert("Error while uploading")
-            console.log(err);
+            modalContent['heading'] = "Error while uploading"
+            modalContent['icon']="fa-frown-o"
+            modalContent['text']="Sorry for this inconvenience.Kindly retry "
+            this.setState({showModal : true},()=>{
+                this.setState({modalContent})
+            })
         })
 
     }
@@ -116,7 +135,11 @@ class RequestArticle extends Component {
                         <button type="submit" className="requestArticleButton my-2">Send Request <i className="fa fa-paper-plane" aria-hidden="true"></i></button>
                     </form>
                 </div>
-
+                
+                <OverlayModal
+                    modalContent={this.state.modalContent}
+                    show={this.state.showModal}
+                    onHide={() => {this.setState({showModal : false})}}/>
             </div>
           
         </>

@@ -4,6 +4,7 @@ import './index.scss';
 import ArticleEditor from '../../Component/ArticleEditor';
 import axios from 'axios';
 import InputTags from '../../Component/InputTags';
+import OverlayModal from '../../Component/OverlayModal';
 
 export class WriteArticle extends Component {
     state = {
@@ -21,7 +22,14 @@ export class WriteArticle extends Component {
         },
         articleText: '',
         AllTags: ['Interview-experience'],
-        isChange: false
+        isChange: false,
+        showModal : false,
+        modalTextStatus : '',
+        modalContent : {
+            heading : '',
+            icon : '',
+            text : '',
+        }
     }
 
     handleInputValue = key => e => {
@@ -59,8 +67,15 @@ export class WriteArticle extends Component {
         if (e.keyCode === 13) {
             e.preventDefault();
         }
+        const { articleDetails, articleText, AllTags, modalContent } = this.state;
+        modalContent['heading'] = "Uploading"
+        modalContent['icon']="fa-upload"
+        modalContent['text']="Have patience....."
+        this.setState({showModal : true},()=>{
+            this.setState({modalContent})
+        })
 
-        const { articleDetails, articleText, AllTags } = this.state;
+       
         
         if (this.checkEmptyFields()) {
             
@@ -80,10 +95,22 @@ export class WriteArticle extends Component {
             const apiUrl = '/api/v1/article/';
 
             axios.post(apiUrl, payload).then((res) => {
-                alert("Successfully uploaded")
+                //alert("Successfully uploaded");
+                modalContent['heading'] = "Successfully uploaded"
+                modalContent['icon']="fa-smile-o"
+                modalContent['text']="Thank you for sharing your experience. Once verified it will be available on anubhav."
+                this.setState({showModal : true},()=>{
+                    this.setState({modalContent})
+                })
             }).catch((err) => {
-                alert("Error while uploading")
+                //alert("Error while uploading")
                 console.log(err);
+                modalContent['heading'] = "Error while uploading"
+                modalContent['icon']="fa-frown-o"
+                modalContent['text']="Sorry for this inconvenience.Kindly retry "
+                this.setState({showModal : true},()=>{
+                    this.setState({modalContent})
+                })
             })
         }
     }
@@ -139,6 +166,12 @@ export class WriteArticle extends Component {
                         <button type="submit" className="col-12 mx-auto btn btn-primary my-2" onClick={this.handleSubmitForm}>Submit</button>
                     </div>
                 </div>
+              
+                    <OverlayModal
+                    modalContent={this.state.modalContent}
+                    show={this.state.showModal}
+                    onHide={() => {this.setState({showModal : false})}}/>
+            
             </div>
         )
     }
