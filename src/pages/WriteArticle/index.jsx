@@ -98,10 +98,14 @@ export class WriteArticle extends Component {
                 //alert("Successfully uploaded");
                 modalContent['heading'] = "Successfully uploaded"
                 modalContent['icon']="fa-smile-o"
-                modalContent['text']="Thank you for sharing your experience. Once verified it will be available on anubhav."
+                modalContent['text']="Thank you for sharing your experience. Once verified it will be available on Anubhav."
                 this.setState({showModal : true},()=>{
                     this.setState({modalContent})
                 })
+                setTimeout(() => {
+                    window.location = "/";
+                }, 5000);
+                
             }).catch((err) => {
                 //alert("Error while uploading")
                 console.log(err);
