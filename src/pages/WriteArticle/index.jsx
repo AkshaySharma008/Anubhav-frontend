@@ -73,17 +73,16 @@ export class WriteArticle extends Component {
         if (e.keyCode === 13) {
             e.preventDefault();
         }
-        const { articleDetails, articleText, AllTags, modalContent } = this.state;
-        modalContent['heading'] = "Uploading"
-        modalContent['icon']="fa-upload"
-        modalContent['text']="Have patience....."
-        this.setState({showModal : true},()=>{
-            this.setState({modalContent})
-        })
-
        
-        
+
         if (this.checkEmptyFields()) {
+            const { articleDetails, articleText, AllTags, modalContent } = this.state;
+            modalContent['heading'] = "Uploading"
+            modalContent['icon']="fa-upload"
+            modalContent['text']="Have patience....."
+            this.setState({showModal : true},()=>{
+                this.setState({modalContent})
+            })
             
             this.setState({ AllTags: [...AllTags, e.target.value] })
             const payload = {

@@ -1,23 +1,45 @@
 .wrapper-class {
-    padding: 0;
-    border-radius: 5px;
-    //border: 1px solid #ccc;
-  }
-  .editor-class {
-    background-color:#f0f4ff !important;
-    padding: 0px 10px;
-    border: 1px solid #ccc;
-  }
-  .toolbar-class {
-    border: 1px solid #ccc;
-  }
+  padding: 0;
+  border-radius: 5px;
+  //border: 1px solid #ccc;
+}
 
-  .rdw-editor-toolbar{
-    margin-bottom: 0px !important;
-   }
- 
-   .rdw-editor-main{
-     min-height: 500px !important;
-   }
+.editor-class {
+  background-color: #f0f4ff !important;
+  padding: 0px 20px;
+  border: 1px solid #ccc;
+}
 
+.toolbar-class {
 
+  border: 1px solid #ccc;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.rdw-editor-toolbar {
+  margin-bottom: 0px !important;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.rdw-editor-main {
+  min-height: 500px !important;
+}
+
+.public-DraftStyleDefault-block {
+  margin: 0.5em 0 !important;
+}
+
+.public-DraftStyleDefault-depth0.public-DraftStyleDefault-listLTR {
+  margin-left: 2.5em !important;
+}
+
+.public-DraftStyleDefault-ol,
+.public-DraftStyleDefault-ul {
+  margin: 8px 0 !important;
+  padding: 0;
+}
