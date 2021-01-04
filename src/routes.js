@@ -33,7 +33,7 @@ export const mainRoute = [
         component: RequestArticle
     },
     {
-        path: "/team",
+        path: "/developers",
         exact: true,
         component: AboutCreators
     },

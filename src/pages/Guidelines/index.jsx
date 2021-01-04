@@ -36,6 +36,7 @@ const Guidelines = () => {
                     </ol>
 
                 </div>
+                <div className="align-self-center text-center m-2" style={{fontWeight:"700"}}>For any Query/Feedback contact <a href = "mailto:anubhav.aitoss@gmail.com" style={{color:"#87a5ff", textDecoration:"none" , cursor:"pointer"}}>Anubhav AITOSS</a></div>
 
             </div>
         </>

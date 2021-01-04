@@ -128,7 +128,7 @@ const HomePage = () => {
 
                 </div>
             </div>
-            <div className="align-self-center text-center" style={{fontWeight:"700"}}>Made with ❤️ by <Link to='/team'><u>OSS Club</u> </Link> only for AITians.
+            <div className="align-self-center text-center" style={{fontWeight:"700"}}>Made with ❤️ by <Link to='/developers'><u>OSS Club</u> </Link> only for AITians.
             </div>
         </div >
     )
