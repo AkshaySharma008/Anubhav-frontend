@@ -10,9 +10,9 @@ const Navbar = () => {
 
             <div className="action-buttons">
             
-            <Link to='/write' className="btn btn-primary">Write Article</Link>
-            <Link to='/request' className="ml-3 mr-3 btn btn-outline-primary">Request Article</Link>
-            {/* <Link to='/guidelines' className="guidelines-logo"> <i className="fa fa-question-circle-o" aria-hidden="true"></i></Link> */} 
+            <Link to='/write' className="mt-2 btn btn-primary">Write Article</Link>
+            <Link to='/request' className="mt-2 btn btn-outline-primary">Request Article</Link>
+            <Link to='/guidelines' className="guidelines-logo"> <i className="fa fa-question-circle-o" aria-hidden="true"></i></Link> 
             </div>
            
         </div>

@@ -66,7 +66,7 @@ const HomePage = () => {
                             />
                         </Carousel.Item>
                     </Carousel>
-                    <p className="homepagePara mx-auto mt-4 text-center">Anubhav: Experience Sharing Point (A-ESP) is a platform developed for AITians to read & share encounters of various interviews.<span className="hide-for-small">Anyone from AIT can submit their experience on A-ESP to guide others on their way to the next interview. All submitted articles are categorized on the basis of the interviewer company. Anubhav also helps you to request your seniors to share their experience here.</span> </p>
+                    <p className="homepagePara mx-auto mt-4 text-center">Anubhav: Experience Sharing Point (A-ESP) is a platform developed for AITians to read & share encounters of various interviews.<span className="hide-for-small">Anyone from AIT can submit their experience on A-ESP to guide others on their way to the next interview. All submitted articles are categorized on the basis of the interviewer company. Anubhav also helps you to request your seniors to share their experience here.</span></p>
                 </div>
                 <div className="col-md-3 order-md-1 col-12 " >
                     <div className="title-bar d-flex">
@@ -128,7 +128,8 @@ const HomePage = () => {
 
                 </div>
             </div>
-            <div className="align-self-center text-center" style={{fontWeight:"700"}}>Made with ❤️ by <Link to='/made-by'><u>OSS Club</u> </Link> only for AITians</div>
+            <div className="align-self-center text-center" style={{fontWeight:"700"}}>Made with ❤️ by <Link to='/team'><u>OSS Club</u> </Link> only for AITians.
+            </div>
         </div >
     )
 }

@@ -1,4 +1,4 @@
-import { Switch,Route } from "react-router-dom";
+import { Switch,Route,Redirect } from "react-router-dom";
 import Navbar from "./Component/Navbar";
 import { mainRoute } from "./routes";
 
@@ -19,6 +19,7 @@ function App() {
            )
          })
        }
+      <Redirect to='/' /> 
      </Switch>
     </>
   );

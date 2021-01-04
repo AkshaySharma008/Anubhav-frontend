@@ -4,6 +4,7 @@ import CompanyWiseArticleList from "./pages/CompanyWiseArticleList";
 import HomePage from "./pages/HomePage";
 import RequestArticle from "./pages/RequestArticle";
 import WriteArticle from "./pages/WriteArticle";
+import Guidelines from "./pages/Guidelines"
 
 export const mainRoute = [
     {
@@ -32,10 +33,15 @@ export const mainRoute = [
         component: RequestArticle
     },
     {
-        path: "/made-by",
+        path: "/team",
         exact: true,
         component: AboutCreators
     },
+    {
+        path:"/guidelines",
+        exact  :true,
+        component: Guidelines
+    }
 
 ]
 

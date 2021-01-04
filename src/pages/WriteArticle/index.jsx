@@ -5,6 +5,7 @@ import ArticleEditor from '../../Component/ArticleEditor';
 import axios from 'axios';
 import InputTags from '../../Component/InputTags';
 import OverlayModal from '../../Component/OverlayModal';
+import { Prompt } from 'react-router-dom';
 
 export class WriteArticle extends Component {
     state = {
@@ -22,7 +23,8 @@ export class WriteArticle extends Component {
         },
         articleText: '',
         AllTags: ['Interview-experience'],
-        isChange: false,
+        formIsHalfFilledOut: false,
+        isAnyChange: false,
         showModal : false,
         modalTextStatus : '',
         modalContent : {
@@ -31,16 +33,20 @@ export class WriteArticle extends Component {
             text : '',
         }
     }
-
+    
     handleInputValue = key => e => {
         const { articleDetails, errors } = this.state;
         articleDetails[key] = e.target.value;
         errors[key] = null
         this.setState({ articleDetails, errors })
-        this.setState({ isAnyChange: true })
+        //this.setState({ isAnyChange: true })
+        this.setState({ formIsHalfFilledOut: true})
+       
+
     }
     handleEditorInputChange = (data) => {
         this.setState({ articleText: data })
+        this.setState({ formIsHalfFilledOut: true})
 
     }
 
@@ -123,6 +129,11 @@ export class WriteArticle extends Component {
     render() {
         const { errors } = this.state;
         return (
+            <>
+            <Prompt 
+             when={!!this.state.formIsHalfFilledOut}
+             message='You have unsaved changes, are you sure you want to leave?'
+            />
             <div className="container my-3 px-0 write-article">
                 <div className="col-md-8 mx-auto">
                     <div >
@@ -177,6 +188,7 @@ export class WriteArticle extends Component {
                     onHide={() => {this.setState({showModal : false})}}/>
             
             </div>
+            </>
         )
     }
 }
