@@ -16,7 +16,6 @@
 
     .tags{
       margin : 5px 10px;
-      height:20px;
       align-self: flex-end;
       font-size: 16px;
       & > *{
@@ -36,5 +35,5 @@
 
 .article-post p,
 .article-post blockquote {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 0.4rem 0;
 }

@@ -21,7 +21,7 @@ const CompanyWiseArticleList = ({ match }) => {
     }, [loadData])
 
     const replaceHTMLTags=(str)=>{
-        str = str.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+        str = str.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ');
         return str.replace(/<\/?[^>]+(>|$)/g, "")
     }
 
