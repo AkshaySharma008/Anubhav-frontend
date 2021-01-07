@@ -1,0 +1,41 @@
+.feedback-reaction {
+
+    input {
+        display: none;
+    }
+
+    input:checked {
+        display: none;
+    }
+
+    input:checked + label i.fa-dizzy{
+
+        color: rgb(255, 7, 7);
+
+    }
+
+    input:checked + label i.fa-frown-open{
+
+        color: rgb(255, 48, 11);
+
+    }
+
+    input:checked + label i.fa-meh{
+
+        color: rgb(35, 190, 48);
+
+    }
+
+    input:checked + label i.fa-grin-beam{
+
+        color: rgb(255, 132, 153);
+
+    }
+
+    input:checked + label i.fa-grin-hearts{
+
+        color: rgb(255, 31, 162);
+
+    }
+
+}
