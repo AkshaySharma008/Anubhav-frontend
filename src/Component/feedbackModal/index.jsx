@@ -4,13 +4,6 @@ import Modal from 'react-bootstrap/Modal'
 import "./index.scss"
 
 export default class FeedbackModal extends Component {
-    state = {
-        iconClass: "far",
-    }
-
-    onClickHandler = () => {
-        this.setState({iconClass: "fa fas"})
-    }
 
 render() { 
     return (
@@ -23,37 +16,39 @@ render() {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        risgabh
+                        Successfuly Submitted !
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p className="text-center">
-                    <form className="feedback-reaction">
+                    <form className=" text-center feedback-reaction" method="get">
                     <p>How was your experience ?</p>
                     
                     <input type="radio" id="dizzy" name="reaction" value="dizzy"></input>
 
-                    <label onClick={this.onClickHandler} htmlFor="dizzy"><i className={`${this.state.iconClass} fa-dizzy display-4 m-2`} aria-hidden="true"></i></label>
+                    <label htmlFor="dizzy"><i className={`far fa-dizzy display-4 m-2`} aria-hidden="true"></i></label>
 
                     <input type="radio" id="frown" name="reaction" value="frown"></input>
 
-                    <label onClick={this.onClickHandler} htmlFor="frown"><i className={`${this.state.iconClass} fa-frown-open display-4 m-2`} aria-hidden="true"></i></label>
+                    <label htmlFor="frown"><i className={`far fa-frown-open display-4 m-2`} aria-hidden="true"></i></label>
 
                     <input type="radio" id="meh" name="reaction" value="meh"></input>
 
-                    <label onClick={this.onClickHandler} htmlFor="meh"><i className={`${this.state.iconClass} fa-meh display-4 m-2`} aria-hidden="true"></i></label>
+                    <label htmlFor="meh"><i className={`far fa-meh display-4 m-2`} aria-hidden="true"></i></label>
 
                     <input type="radio" id="happy" name="reaction" value="happy"></input>
 
-                    <label onClick={this.onClickHandler} htmlFor="happy"><i className={`${this.state.iconClass}  fa-grin-beam display-4 m-2`} aria-hidden="true"></i></label>
+                    <label htmlFor="happy"><i className={`far fa-grin-beam display-4 m-2`} aria-hidden="true"></i></label>
 
                     <input type="radio" id="love" name="reaction" value="love"></input>
 
-                    <label onClick={this.onClickHandler} htmlFor="love"><i className={`${this.state.iconClass}  fa-grin-hearts display-4 m-2`} aria-hidden="true"></i></label>
+                    <label htmlFor="love"><i className={`far fa-grin-hearts display-4 m-2`} aria-hidden="true"></i></label>
+                    <br/>
+                    <textarea id="feedback-reaction-text" name="reaction" placeholder="Anything More You Wanna Add... (Optional)" rows="5"></textarea>
+                    <br />
+                    <br />
+                    <button className="btn btn-primary" type="submit" >Submit</button>
                     </form>
                     <br/>
-                     Chituya
-                    </p>
                 </Modal.Body>
              
             </Modal>

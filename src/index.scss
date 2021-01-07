@@ -11,6 +11,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: linear-gradient(90deg, #DAE3FE 0%, #E9EFFD 100%);
   }
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
   
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
