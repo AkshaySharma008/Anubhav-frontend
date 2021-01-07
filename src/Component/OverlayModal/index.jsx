@@ -7,7 +7,7 @@ const OverlayModal = ({modalContent,show,onHide}) => {
         <>
             <Modal
                  show={show} onHide={onHide} 
-                size="lg"
+                size="md"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
@@ -18,7 +18,11 @@ const OverlayModal = ({modalContent,show,onHide}) => {
                 </Modal.Header>
                 <Modal.Body>
                     <p className="text-center">
-                    <i class={`fa ${modalContent.icon} display-3`} aria-hidden="true"></i>
+                    <i class={`far fa-dizzy display-4`} aria-hidden="true"></i>
+                    <i class={`far fa-frown-open display-4`} aria-hidden="true"></i>
+                    <i class={`far fa-meh display-4`} aria-hidden="true"></i>
+                    <i class={`far fa-grin-beam display-4`} aria-hidden="true"></i>
+                    <i class={`far fa-grin-hearts display-4`} aria-hidden="true"></i>
                     <br/>
                     {modalContent.text}
                     </p>
