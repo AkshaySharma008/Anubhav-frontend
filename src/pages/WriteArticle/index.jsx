@@ -3,6 +3,8 @@ import { Component } from 'react';
 import './index.scss';
 import ArticleEditor from '../../Component/ArticleEditor';
 import axios from 'axios';
+import SweetAlert from 'sweetalert-react';
+import '../../../node_modules/sweetalert/dist/sweetalert.css'
 import InputTags from '../../Component/InputTags';
 import OverlayModal from '../../Component/OverlayModal';
 import { Prompt } from 'react-router-dom';
@@ -31,7 +33,8 @@ export class WriteArticle extends Component {
             heading : '',
             icon : '',
             text : '',
-        }
+        },
+        show: false,
     }
     
     handleInputValue = key => e => {
@@ -69,10 +72,10 @@ export class WriteArticle extends Component {
     }
     handleSubmitForm = (e) => {
 
-        e.preventDefault();
-        if (e.keyCode === 13) {
-            e.preventDefault();
-        }
+        // e.preventDefault();        This part was causing issues
+        // if (e.keyCode === 13) {
+        //     e.preventDefault();
+        // }
        
 
         if (this.checkEmptyFields()) {
@@ -177,7 +180,18 @@ export class WriteArticle extends Component {
                             />
 
                         </div>
-                        <button type="submit" className="col-12 mx-auto btn btn-primary my-2" onClick={this.handleSubmitForm}>Submit</button>
+                        <button type="submit" className="col-12 mx-auto btn btn-primary my-2" onClick={() => this.setState({ show: true })}>Submit</button>
+                        <SweetAlert
+                            show={this.state.show}
+                            title="Submit"
+                            text="Do you want to submit this article?"
+                            showCancelButton
+                            onConfirm={() => {
+                                this.setState({ show: false })
+                                this.handleSubmitForm()
+                            }}
+                            onCancel={() => this.setState({ show: false })}
+                        />
                     </div>
                 </div>
               
