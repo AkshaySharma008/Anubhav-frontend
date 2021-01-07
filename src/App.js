@@ -1,6 +1,5 @@
 import { Switch,Route,Redirect } from "react-router-dom";
 import Navbar from "./Component/Navbar";
-import OverlayModal from "./Component/OverlayModal";
 import { mainRoute } from "./routes";
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
     <>
     <Navbar/>
      <Switch>
-       {/* {
+       {
          mainRoute.map((route,index)=>{
            return(
             <Route
@@ -20,15 +19,7 @@ function App() {
            )
          })
        }
-      <Redirect to='/' />  */}
-      <OverlayModal 
-        modalContent={{
-            heading: 'Successfully Submitted',
-            icon: 'fa-smile-o',
-            text: 'Chutiya',
-        }}
-        show="true"
-        />
+      <Redirect to='/' /> 
      </Switch>
     </>
   );
