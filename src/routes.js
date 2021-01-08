@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage";
 import RequestArticle from "./pages/RequestArticle";
 import WriteArticle from "./pages/WriteArticle";
 import Guidelines from "./pages/Guidelines"
-import FeedbackModal from "./Component/feedbackModal/index"
 
 
 export const mainRoute = [
@@ -43,12 +42,6 @@ export const mainRoute = [
         path:"/guidelines",
         exact  :true,
         component: Guidelines
-    },
-    {
-        path:"/feedback",
-        exact  :true,
-        component: FeedbackModal
     }
-
 ]
 

@@ -1,4 +1,3 @@
-
 import { Component } from 'react';
 import './index.scss';
 import ArticleEditor from '../../Component/ArticleEditor';
@@ -8,6 +7,7 @@ import '../../../node_modules/sweetalert/dist/sweetalert.css'
 import InputTags from '../../Component/InputTags';
 import OverlayModal from '../../Component/OverlayModal';
 import { Prompt } from 'react-router-dom';
+import FeedbackModal from '../../Component/feedbackModal/index';
 
 export class WriteArticle extends Component {
     state = {
@@ -35,6 +35,7 @@ export class WriteArticle extends Component {
             text: '',
         },
         isShowPreSubmit: false,
+        feedbackshow: false,
     }
 
     handleInputValue = key => e => {
@@ -105,15 +106,9 @@ export class WriteArticle extends Component {
 
         axios.post(apiUrl, payload).then((res) => {
             //alert("Successfully uploaded");
-            modalContent['heading'] = "Successfully uploaded"
-            modalContent['icon'] = "fa-smile-o"
-            modalContent['text'] = "Thank you for sharing your experience. Once verified it will be available on Anubhav."
-            this.setState({ showModal: true }, () => {
+            this.setState({ showModal: false, feedbackshow: true }, () => {
                 this.setState({ modalContent })
             })
-            setTimeout(() => {
-                window.location = "/";
-            }, 5000);
 
         }).catch((err) => {
             //alert("Error while uploading")
@@ -121,7 +116,7 @@ export class WriteArticle extends Component {
             modalContent['heading'] = "Error while uploading"
             modalContent['icon'] = "fa-frown-o"
             modalContent['text'] = "Sorry for this inconvenience.Kindly retry "
-            this.setState({ showModal: true }, () => {
+            this.setState({ showModal: true , feedbackshow : false}, () => {
                 this.setState({ modalContent })
             })
         })
@@ -199,7 +194,15 @@ export class WriteArticle extends Component {
                     <OverlayModal
                         modalContent={this.state.modalContent}
                         show={this.state.showModal}
-                        onHide={() => { this.setState({ showModal: false }) }}
+                        onHide={() => { this.setState({ showModal: false })
+                        }}
+                    />
+
+                    <FeedbackModal 
+                        onHide={() => {this.setState({feedbackshow:false})}}
+                        show={this.state.feedbackshow}
+                        article={this.state.articleDetails.title}
+                        authorName={this.state.articleDetails.name}
                     />
 
                 </div>
