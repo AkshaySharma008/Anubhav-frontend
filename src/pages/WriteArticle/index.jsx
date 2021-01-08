@@ -36,6 +36,7 @@ export class WriteArticle extends Component {
         },
         isShowPreSubmit: false,
         feedbackshow: false,
+        articleIDForFeedback : '',
     }
 
     handleInputValue = key => e => {
@@ -106,8 +107,10 @@ export class WriteArticle extends Component {
 
         axios.post(apiUrl, payload).then((res) => {
             //alert("Successfully uploaded");
+            //console.log(res.data, res.data.article._id)
+        
             this.setState({ showModal: false, feedbackshow: true }, () => {
-                this.setState({ modalContent })
+                this.setState({articleIDForFeedback : res.data.article._id })
             })
 
         }).catch((err) => {
@@ -201,8 +204,7 @@ export class WriteArticle extends Component {
                     <FeedbackModal 
                         onHide={() => {this.setState({feedbackshow:false})}}
                         show={this.state.feedbackshow}
-                        article={this.state.articleDetails.title}
-                        authorName={this.state.articleDetails.name}
+                        article={this.state.articleIDForFeedback}
                     />
 
                 </div>

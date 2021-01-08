@@ -2,6 +2,7 @@
 
     input {
         display: none;
+       
     }
 
     input:checked {
@@ -48,6 +49,7 @@
         transition-duration: 0.3s;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        cursor: pointer;
     }
     label:nth-of-type(1) i:hover {
         color: rgb(255, 7, 7);

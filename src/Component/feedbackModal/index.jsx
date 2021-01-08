@@ -10,6 +10,8 @@ export default class FeedbackModal extends Component {
         feedback: '',
         rating: 5,
         hidden: false,
+
+        submitButtonText : 'Submit',
     }
 
     ratingChangeHandler = (id) => {
@@ -35,19 +37,26 @@ export default class FeedbackModal extends Component {
     postDataHandler = () => {
         const data = {
             article : this.props.article,
-            authorName: this.props.authorName,
             feedback: this.state.feedback,
             rating : this.state.rating
         };
         console.log(data)
+        this.setState({submitButtonText : 'Submitting...'})
         axios.post('/api/v1/feedback', data)
             .then(response => {
+                this.setState({submitButtonText : 'Submitted'})
                 setTimeout(() => {
                     window.location = "/";
                 }, 1000);
 
+            }).catch((err)=>{
+                this.setState({submitButtonText : 'Kindly retry'})
             });
             
+    }
+
+    handleSkipFeedback =()=>{
+        window.location ="/"
     }
 
     render() {  
@@ -61,7 +70,7 @@ export default class FeedbackModal extends Component {
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                 >
-                    <Modal.Header closeButton>
+                    <Modal.Header>
                         <Modal.Title id="contained-modal-title-vcenter">
                             Successfuly Submitted !
                         </Modal.Title>
@@ -93,7 +102,9 @@ export default class FeedbackModal extends Component {
                         <textarea  value={this.state.feedback} onChange={(event) => this.setState({feedback: event.target.value})} id="feedback-reaction-text" name="reaction" placeholder="Anything More You Wanna Add... (Optional)" rows="5"></textarea>
                         <br />
                         <br />
-                        <button className="btn btn-primary" onClick={this.postDataHandler}>Submit</button>
+                        <button className="btn btn-secondary mr-2" onClick={this.postDataHandler}>Skip</button>
+                        <button className="btn btn-primary" onClick={this.handleSkipFeedback}>{this.state.submitButtonText}</button>
+                       
                         </div>
                         <br/>
                     </Modal.Body>
