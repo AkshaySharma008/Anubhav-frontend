@@ -10,8 +10,8 @@ export default class FeedbackModal extends Component {
         feedback: '',
         rating: 5,
         hidden: false,
-
-        submitButtonText : 'Submit',
+        disableButton:false,
+        headingText : 'Article Successfully Submitted !',
     }
 
     ratingChangeHandler = (id) => {
@@ -35,22 +35,25 @@ export default class FeedbackModal extends Component {
     
 
     postDataHandler = () => {
+        this.setState({headingText : 'Submitting Feedback...'})   
+        this.setState({disableButton : true})
         const data = {
             article : this.props.article,
             feedback: this.state.feedback,
             rating : this.state.rating
         };
-        console.log(data)
-        this.setState({submitButtonText : 'Submitting...'})
+        //console.log(data)
+       
         axios.post('/api/v1/feedback', data)
             .then(response => {
-                this.setState({submitButtonText : 'Submitted'})
+                this.setState({headingText : 'Feedback Submitted....Redirecting to home'})
                 setTimeout(() => {
                     window.location = "/";
                 }, 1000);
 
             }).catch((err)=>{
-                this.setState({submitButtonText : 'Kindly retry'})
+                this.setState({disableButton : false})
+                this.setState({headingText : 'Kindly retry'})
             });
             
     }
@@ -72,7 +75,7 @@ export default class FeedbackModal extends Component {
                 >
                     <Modal.Header>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            Successfuly Submitted !
+                            {this.state.headingText}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -102,8 +105,8 @@ export default class FeedbackModal extends Component {
                         <textarea  value={this.state.feedback} onChange={(event) => this.setState({feedback: event.target.value})} id="feedback-reaction-text" name="reaction" placeholder="Anything More You Wanna Add... (Optional)" rows="5"></textarea>
                         <br />
                         <br />
-                        <button className="btn btn-secondary mr-2" onClick={this.postDataHandler}>Skip</button>
-                        <button className="btn btn-primary" onClick={this.handleSkipFeedback}>{this.state.submitButtonText}</button>
+                        <button className="btn btn-secondary mr-2" onClick={this.handleSkipFeedback}>Skip</button>
+                        <button className="btn btn-primary" disabled={this.state.disableButton} onClick={this.postDataHandler}>Submit</button>
                        
                         </div>
                         <br/>
