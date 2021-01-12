@@ -1,0 +1,93 @@
+.feedback-reaction {
+
+    input {
+        display: none;
+       
+    }
+
+    input:checked {
+        display: none;
+    }
+
+    input:checked + label i.fa-dizzy{
+
+        color: rgb(255, 0, 0);
+
+    }
+
+    input:checked + label i.fa-frown-open{
+
+        color: rgba(255, 121, 11, 0.842);
+
+    }
+
+    input:checked + label i.fa-meh{
+
+        color: rgb(35, 190, 48);
+
+    }
+
+    input:checked + label i.fa-grin-beam{
+
+        color: rgb(255, 132, 153);
+
+    }
+
+    input:checked + label i.fa-grin-hearts{
+
+        color: rgb(255, 31, 162);
+
+    }
+
+    label i {
+        transform: scale(1);
+        transition-duration: 0.3s;
+    }
+
+    label i:hover {
+        transform: scale(1.1);
+        transition-duration: 0.3s;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        cursor: pointer;
+    }
+    label:nth-of-type(1) i:hover {
+        color: rgb(255, 7, 7);
+
+    }
+    label:nth-of-type(2) i:hover {
+
+        color: rgb(255, 48, 11);
+    }
+    label:nth-of-type(3) i:hover {
+        
+        color: rgb(35, 190, 48);
+    }
+    label:nth-of-type(4) i:hover {
+        color: rgb(255, 132, 153);
+
+    }
+    label:nth-of-type(5) i:hover {
+
+        color: rgb(255, 31, 162);
+    }
+
+    textarea {
+        border-radius: 5px !important;
+        border: solid 2px rgb(170, 170, 170);
+        color: #070707;
+        width: 85% !important;
+        padding: 0.45rem 0.85rem;
+        outline: none;
+        font-size: 1rem;
+        font-weight: bold;
+        
+    }
+    
+    textarea::placeholder{
+        font-size: 1rem;
+        font-weight: lighter;
+        color: gray;
+    }
+
+}
