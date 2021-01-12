@@ -6,6 +6,7 @@ import RequestArticle from "./pages/RequestArticle";
 import WriteArticle from "./pages/WriteArticle";
 import Guidelines from "./pages/Guidelines"
 
+
 export const mainRoute = [
     {
         path: "/",
@@ -42,6 +43,5 @@ export const mainRoute = [
         exact  :true,
         component: Guidelines
     }
-
 ]
 
