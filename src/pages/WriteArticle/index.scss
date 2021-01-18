@@ -3,11 +3,22 @@
         border-radius: 5px !important;
         border: none;
         color: #757474;
-        width: 100% !important;
+        width: 100%;
         height: calc(1.5em + 0.75rem + 2px);
         padding: 0.375rem 0.75rem;
         font-size: 1rem;
     }
+
+    .show-name-checkbox{
+        cursor: pointer;
+        margin-top: 5px;
+        input{
+            width: 14px;
+            height:14px;
+        }
+        label{ font-size: 90%;}
+    }
+
 }
 
 .form-control .react-tags__search-input {

@@ -16,6 +16,7 @@ export class WriteArticle extends Component {
             companyName: '',
             name: '',
             contact: '',
+            showName: true,
         },
         errors: {
             title: '',
@@ -36,7 +37,7 @@ export class WriteArticle extends Component {
         },
         isShowPreSubmit: false,
         feedbackshow: false,
-        articleIDForFeedback : '',
+        articleIDForFeedback: '',
     }
 
     handleInputValue = key => e => {
@@ -54,6 +55,14 @@ export class WriteArticle extends Component {
         this.setState({ formIsHalfFilledOut: true })
 
     }
+
+    handleCheckBoxInput = key => e => {
+        const { articleDetails } = this.state;
+        articleDetails[key] = e.target.checked;
+        this.setState({ articleDetails })
+
+    }
+
 
     selectedTags = tags => {
         this.setState({ AllTags: tags })
@@ -100,7 +109,8 @@ export class WriteArticle extends Component {
             "author": {
                 "name": articleDetails.name,
                 "contact": articleDetails.contact,
-            }
+            },
+            "showName":articleDetails.showName,
         }
         //alert(JSON.stringify(payload))
         const apiUrl = '/api/v1/article/';
@@ -108,9 +118,9 @@ export class WriteArticle extends Component {
         axios.post(apiUrl, payload).then((res) => {
             //alert("Successfully uploaded");
             //console.log(res.data, res.data.article._id)
-        
+
             this.setState({ showModal: false, feedbackshow: true }, () => {
-                this.setState({articleIDForFeedback : res.data.article._id })
+                this.setState({ articleIDForFeedback: res.data.article._id })
             })
 
         }).catch((err) => {
@@ -119,7 +129,7 @@ export class WriteArticle extends Component {
             modalContent['heading'] = "Error while uploading"
             modalContent['icon'] = "fa-frown-o"
             modalContent['text'] = "Sorry for this inconvenience.Kindly retry "
-            this.setState({ showModal: true , feedbackshow : false}, () => {
+            this.setState({ showModal: true, feedbackshow: false }, () => {
                 this.setState({ modalContent })
             })
         })
@@ -154,6 +164,14 @@ export class WriteArticle extends Component {
                                     <label htmlFor="exampleFormControlInput3">Your Name</label>
                                     <input type="text" className="articleRequestTextBox form-control" id="exampleFormControlInput3" required onChange={this.handleInputValue('name')} />
                                     <span>{errors.name}</span>
+
+                                    <div className="form-check show-name-checkbox d-flex">
+                                        <input type="checkbox" className="form-check-input "
+                                            checked={this.state.articleDetails.showName}
+                                            onChange={this.handleCheckBoxInput('showName')}
+                                            id="showNameCheck" />
+                                        <label className="form-check-label" htmlFor="showNameCheck">display name with article</label>
+                                    </div>
 
                                 </div>
 
@@ -197,12 +215,13 @@ export class WriteArticle extends Component {
                     <OverlayModal
                         modalContent={this.state.modalContent}
                         show={this.state.showModal}
-                        onHide={() => { this.setState({ showModal: false })
+                        onHide={() => {
+                            this.setState({ showModal: false })
                         }}
                     />
 
-                    <FeedbackModal 
-                        onHide={() => {this.setState({feedbackshow:false})}}
+                    <FeedbackModal
+                        onHide={() => { this.setState({ feedbackshow: false }) }}
                         show={this.state.feedbackshow}
                         article={this.state.articleIDForFeedback}
                     />
