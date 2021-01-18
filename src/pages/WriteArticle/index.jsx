@@ -47,26 +47,23 @@ export class WriteArticle extends Component {
         this.setState({ articleDetails, errors })
         //this.setState({ isAnyChange: true })
         this.setState({ formIsHalfFilledOut: true })
-
-
     }
+
     handleEditorInputChange = (data) => {
         this.setState({ articleText: data })
         this.setState({ formIsHalfFilledOut: true })
-
     }
 
     handleCheckBoxInput = key => e => {
         const { articleDetails } = this.state;
         articleDetails[key] = e.target.checked;
         this.setState({ articleDetails })
-
     }
-
 
     selectedTags = tags => {
         this.setState({ AllTags: tags })
     }
+
     checkEmptyFields = () => {
         const { articleDetails, errors } = this.state
         let valid = true
@@ -88,10 +85,9 @@ export class WriteArticle extends Component {
         }
 
     }
+
     handleSubmitForm = (e) => {
-
         // e.preventDefault();        This part was causing issues
-
         const { articleDetails, articleText, AllTags, modalContent } = this.state;
         modalContent['heading'] = "Uploading"
         modalContent['icon'] = "fa-upload"
@@ -135,6 +131,48 @@ export class WriteArticle extends Component {
         })
 
     }
+
+
+    saveDraft = () => {
+        const { articleDetails, articleText, AllTags} = this.state;
+        const payload = {
+            "title": articleDetails.title ? articleDetails.title : "",
+            "typeOfArticle": "Interview-experience",
+            "companyName": articleDetails.companyName ? articleDetails.companyName : "",
+            "description": articleText ? articleText : "",
+            "articleTags": AllTags ? AllTags : "",
+            "author": {
+                "name": articleDetails.name ? articleDetails.name : "",
+                "contact": articleDetails.contact ? articleDetails.contact : "" ,
+            },
+            "showName":articleDetails.showName ? articleDetails.showName : "",
+        }
+        localStorage.setItem("anubhavExperience" , JSON.stringify(payload))
+    }
+
+    getSavedDraft = () => {
+        const { articleDetails, articleText, AllTags } = this.state;
+        const data = JSON.parse(localStorage.getItem("anubhavExperience"))
+        console.log(data)
+        // articleDetails['title'] = data.title,
+        // articleDetails['companyName'] = data.companyName,
+        // articleDetails['name'] = data.name, 
+        // articleDetails['contact'] = data.contact, 
+        // articleDetails['showname'] = data.showName, 
+        // articleText = data.description,
+        // AllTags = data.articleTags
+
+        this.setState({articleDetails, articleText, AllTags});
+    }
+
+    patchSavedData = () => {
+        console.log(this.state)
+    }
+
+    componentDidMount(){
+        this.getSavedDraft();
+    }
+
 
 
     render() {
@@ -197,7 +235,10 @@ export class WriteArticle extends Component {
                                 />
 
                             </div>
-                            <button type="submit" className="col-12 mx-auto btn btn-primary my-2" onClick={this.handlePreSubmit}>Submit</button>
+                            <div className="clearfix mx-2">
+                            <button type="submit" className="col-5 mx-auto btn btn-primary my-3 float-left" onClick={this.saveDraft}>Save As Draft</button>
+                            <button type="submit" className="col-5 mx-auto btn btn-primary my-3 float-right" onClick={this.handlePreSubmit}>Submit</button>
+                            </div>
                             <SweetAlert
                                 show={this.state.isShowPreSubmit}
                                 title="Submit"
