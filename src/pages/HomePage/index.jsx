@@ -113,7 +113,7 @@ const HomePage = () => {
                                                 id={item._id}
                                                 title={item.title}
                                                 description={replaceHTMLTags(item.description)}
-                                                name={item.author.name}
+                                                name={(item.showName) ? `${item.author.name}` : ' AITian '}
                                                 date={item.createdAt}
                                                 tags={item.articleTags}
                                             />
