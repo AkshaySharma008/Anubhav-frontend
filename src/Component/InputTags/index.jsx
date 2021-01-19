@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './index.scss'
 
 const InputTags = (props) => {
     const [tags, setTags] = React.useState(props.tags);
+    
+    useEffect(() => {
+        setTags(props.tags)  
+    },[props.tags])
+
+
     const removeTags = indexToRemove => {
         setTags([...tags.filter((_, index) => index !== indexToRemove)]);
     };
@@ -15,8 +21,10 @@ const InputTags = (props) => {
             event.target.value = "";
         }
     };
+    
     return (
         <div className="tags-input">
+            {console.log("t-",props.tags)}
             <ul id="tags">
                 {tags.map((tag, index) => (
                     <li key={index} className="tag">

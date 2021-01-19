@@ -7,13 +7,18 @@ import './index.scss';
 import draftToHtml from 'draftjs-to-html';
 //import htmlToDraft from 'html-to-draftjs';
 
-const ArticleEditor = ({handleInputChange}) => {
+const ArticleEditor = ({handleInputChange,data}) => {
     const [editorState, setEditorState] = useState(
         () => EditorState.createEmpty(),
     );
 
+    // useEffect(() => {
+    //    setEditorState(SANITIZATION(data))
+    // }, [data])
+
     const changeEditorInput =(data)=>{
-        setEditorState(data)
+        setEditorState(data);
+        console.log(data);
        const x = draftToHtml(convertToRaw(editorState.getCurrentContent()))
         handleInputChange(x);
     }

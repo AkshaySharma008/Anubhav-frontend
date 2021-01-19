@@ -10,9 +10,10 @@ import { Prompt } from 'react-router-dom';
 import FeedbackModal from '../../Component/feedbackModal/index';
 
 export class WriteArticle extends Component {
+    
     state = {
         articleDetails: {
-            title: '',
+            title: 'll',
             companyName: '',
             name: '',
             contact: '',
@@ -25,7 +26,7 @@ export class WriteArticle extends Component {
             contact: '',
         },
         articleText: '',
-        AllTags: ['Interview-experience'],
+        AllTags: [],
         formIsHalfFilledOut: false,
         isAnyChange: false,
         showModal: false,
@@ -38,6 +39,36 @@ export class WriteArticle extends Component {
         isShowPreSubmit: false,
         feedbackshow: false,
         articleIDForFeedback: '',
+    }
+
+    // getSavedDraft = () => {
+        
+    // }
+
+    // patchSavedData = () => {
+    //     console.log(this.state)
+    // }
+
+    componentDidMount(){
+        const { articleDetails } = this.state;
+        const data = JSON.parse(localStorage.getItem("anubhavExperience"))
+        console.log(data,data.title)
+        articleDetails['title'] = data.title;
+        articleDetails['companyName'] = (data.companyName) ? data.companyName : '' ;
+        articleDetails['name'] = (data.name) ? data.name : '';
+        articleDetails['contact'] = (data.contact) ? data.contact : ''; 
+       
+        this.setState({articleDetails, articleText : data.description,});
+        
+
+        let arr = ['Interview-experience','io']
+        arr.push(...data.articleTags)
+        console.log(arr)
+        this.setState({AllTags : [...arr]})
+    }
+
+    handledata(){
+
     }
 
     handleInputValue = key => e => {
@@ -150,33 +181,10 @@ export class WriteArticle extends Component {
         localStorage.setItem("anubhavExperience" , JSON.stringify(payload))
     }
 
-    getSavedDraft = () => {
-        const { articleDetails, articleText, AllTags } = this.state;
-        const data = JSON.parse(localStorage.getItem("anubhavExperience"))
-        console.log(data)
-        // articleDetails['title'] = data.title,
-        // articleDetails['companyName'] = data.companyName,
-        // articleDetails['name'] = data.name, 
-        // articleDetails['contact'] = data.contact, 
-        // articleDetails['showname'] = data.showName, 
-        // articleText = data.description,
-        // AllTags = data.articleTags
-
-        this.setState({articleDetails, articleText, AllTags});
-    }
-
-    patchSavedData = () => {
-        console.log(this.state)
-    }
-
-    componentDidMount(){
-        this.getSavedDraft();
-    }
-
-
+    
 
     render() {
-        const { errors } = this.state;
+        const { articleDetails,errors } = this.state;
         return (
             <>
                 <Prompt
@@ -188,19 +196,25 @@ export class WriteArticle extends Component {
                         <div >
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlInput1">Title</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1" required onChange={this.handleInputValue('title')} />
+                                <input type="text" className="form-control" id="exampleFormControlInput1"
+                                value={articleDetails.title}
+                                required onChange={this.handledata()} />
                                 <span>{errors.title}</span>
                             </div>
                             <div className="row">
 
                                 <div className="form-group col">
                                     <label htmlFor="exampleFormControlInput2">Company Name</label>
-                                    <input type="text" className="form-control" id="exampleFormControlInput2" required onChange={this.handleInputValue('companyName')} />
+                                    <input type="text" className="form-control" id="exampleFormControlInput2" 
+                                    value={articleDetails.companyName}
+                                    required onChange={this.handleInputValue('companyName')} />
                                     <span>{errors.companyName}</span>
                                 </div>
                                 <div className="form-group col">
                                     <label htmlFor="exampleFormControlInput3">Your Name</label>
-                                    <input type="text" className="articleRequestTextBox form-control" id="exampleFormControlInput3" required onChange={this.handleInputValue('name')} />
+                                    <input type="text" className="articleRequestTextBox form-control" id="exampleFormControlInput3" 
+                                     value={articleDetails.name}
+                                    required onChange={this.handleInputValue('name')} />
                                     <span>{errors.name}</span>
 
                                     <div className="form-check show-name-checkbox d-flex">
@@ -219,14 +233,18 @@ export class WriteArticle extends Component {
 
                                 <div className="form-group col">
                                     <label htmlFor="exampleFormControlInput4">Contact Info <small> (for verification)</small></label>
-                                    <input type="text" className="form-control" id="exampleFormControlInput4" placeholder="college email/social media link " required onChange={this.handleInputValue('contact')} />
+                                    <input type="text" className="form-control" id="exampleFormControlInput4" placeholder="college email/social media link " 
+                                     value={articleDetails.contact}
+                                    required onChange={this.handleInputValue('contact')} />
                                     <span>{errors.contact}</span>
                                 </div>
 
                             </div>
                             <label>Share your experience here</label>
+
                             <ArticleEditor
-                                handleInputChange={this.handleEditorInputChange} />
+                            //data={this.state.articleText}
+                            handleInputChange={this.handleEditorInputChange} />
 
                             <div className="mt-2">
                                 <label htmlFor="exampleFormControlInput1">Tags</label>
