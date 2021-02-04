@@ -58,7 +58,7 @@
     }
 
     .homepagePara{
-        font-size: 1.05rem;
+        font-size: 0.9rem;
         margin-top: 8px;
         width: 90%;
     }
@@ -92,7 +92,7 @@
         .list-box {
             flex:none;
             width: 300px;
-            height: 40px;
+            min-height: 40px;
             background: #FFFFFF;
             border-radius: 6px;
             font-size: 16px;
