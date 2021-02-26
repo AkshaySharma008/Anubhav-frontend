@@ -51,7 +51,7 @@ Please make sure to update tests as appropriate.
 ## Copyright 
 If you are thinking to use this application for your community/college, We would love to see AIT OSS CLUB mention at your hosted application.
 
-<h4 align="center" >Made with ❤ by [OSS Club](https://aitoss.club). </h4> 
+Made with ❤ by [OSS Club](https://aitoss.club). 
 
 
 
