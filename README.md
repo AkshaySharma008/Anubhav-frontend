@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Anubhav-frontend
+<img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"> <img src="https://img.shields.io/badge/ReactJS-v16.14.0-brightgreen.svg">
+<img src="https://img.shields.io/badge/Bootstrap -v4.0.0-brightgreen.svg"> 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Anubhav is a platform developed for AITians to read & share encounters of various interviews. Including interviews of big giants like Amazon, Google & Microsoft. This will surely help the upcoming batches of AIT.
 
-## Available Scripts
+* Portal Link - https://anubhav.aitoss.club 
+* Front-End Repository - https://github.com/aitoss/Anubhav-Backend
 
-In the project directory, you can run:
 
-### `yarn start`
+# Highlights
+* Anyone can share his/her experience of an interview to help students.
+* Students who know someone and want his/her interview experience can request by providing a few details.
+* Writing anonymously is also possible on Anubhav.
+* In the future, we would extend this platform more than just Interview Experiences by adding more helpful features.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Requirements:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Node.js
+* MongoDB
+* Postman
+* Studio3T or MongoDB Compass - Managing DB
 
-### `yarn test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Fork the Repository in your machine then clone it in your machine (Replace your_username with your username)
 
-### `yarn build`
+```bash
+git clone https://github.com/your_username/Anubhav-frontend.git
+```
+Move into the project directory and install required dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd Anubhav-fronend
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run the command in your terminal to start the server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
+<hr>
 
-### `yarn eject`
+## For Contribution 
+Never push your code to master branch
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Please make sure to update tests as appropriate.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<hr>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Copyright 
+If you are thinking to use this application for your community/college, We would love to see AIT OSS CLUB mention at your hosted application.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<h4 align="center" >Made with ❤ by [OSS Club](https://aitoss.club). </h4> 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
