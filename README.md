@@ -5,7 +5,7 @@
 Anubhav is a platform developed for AITians to read & share encounters of various interviews. Including interviews of big giants like Amazon, Google & Microsoft. This will surely help the upcoming batches of AIT.
 
 * Portal Link - https://anubhav.aitoss.club 
-* Front-End Repository - https://github.com/aitoss/Anubhav-Backend
+* Back-End Repository - https://github.com/aitoss/Anubhav-Backend
 
 
 # Highlights
@@ -16,10 +16,8 @@ Anubhav is a platform developed for AITians to read & share encounters of variou
 
 # Requirements:
 
-* Node.js
-* MongoDB
-* Postman
-* Studio3T or MongoDB Compass - Managing DB
+* React JS
+* npm / yarn
 
 ## Installation
 
