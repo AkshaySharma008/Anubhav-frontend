@@ -29,7 +29,7 @@ git clone https://github.com/your_username/Anubhav-frontend.git
 Move into the project directory and install required dependencies
 
 ```bash
-cd Anubhav-fronend
+cd Anubhav-frontend
 npm install
 ```
 
