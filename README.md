@@ -7,14 +7,21 @@ Anubhav is a platform developed for AITians to read & share encounters of variou
 * Portal Link - https://anubhav.aitoss.club 
 * Back-End Repository - https://github.com/aitoss/Anubhav-Backend
 
+## Contents
+1. [Highlights](#highlights)
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+4. [Screens](#screens)
+5. [Contributions](#contribution)
+6. [Copyright](#copyright)
 
-# Highlights
+## Highlights
 * Anyone can share his/her experience of an interview to help students.
 * Students who know someone and want his/her interview experience can request by providing a few details.
 * Writing anonymously is also possible on Anubhav.
 * In the future, we would extend this platform more than just Interview Experiences by adding more helpful features.
 
-# Requirements:
+## Requirements:
 
 * React JS
 * npm / yarn
@@ -39,8 +46,22 @@ Run the command in your terminal to start the server
 npm start
 ```
 <hr>
+## Screens
 
-## For Contribution 
+#### Landing Page,
+![Landing page](https://github.com/aitoss/Anubhav-backend/blob/main/gallery/Screenshot%20(184).png?raw=true)
+
+#### Experience Page,
+![Landing page](https://github.com/aitoss/Anubhav-backend/blob/main/gallery/Screenshot%20(185).png?raw=true)
+
+#### Write Article Page,
+![Landing page](https://github.com/aitoss/Anubhav-backend/blob/main/gallery/Screenshot%20(186).png?raw=true)
+
+#### Request Article Page,
+![Landing page](https://github.com/aitoss/Anubhav-backend/blob/main/gallery/Screenshot%20(187).png?raw=true)
+
+
+## Contribution 
 Never push your code to master branch
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
