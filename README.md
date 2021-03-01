@@ -46,6 +46,7 @@ Run the command in your terminal to start the server
 npm start
 ```
 <hr>
+
 ## Screens
 
 #### Landing Page,
