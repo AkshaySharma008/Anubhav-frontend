@@ -5,7 +5,7 @@
 Anubhav is a platform developed for AITians to read & share encounters of various interviews. Including interviews of big giants like Amazon, Google & Microsoft. This will surely help the upcoming batches of AIT.
 
 * Portal Link - https://anubhav.aitoss.club 
-* Back-End Repository - https://github.com/aitoss/Anubhav-Backend
+* Back-End Repository - https://github.com/aitoss/Anubhav-frontend
 
 ## Contents
 1. [Highlights](#highlights)
